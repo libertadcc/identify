@@ -1,5 +1,4 @@
-{
-	"q" : [
+export const birds =  [
 		{ "q": "https://upload.wikimedia.org/wikipedia/commons/8/84/Rose-ringed_Parakeet_Psittacula_krameri_male_by_Dr._Raju_Kasambe_DSCN8937_%283%29.jpg",
 			"a": "Psittacula krameri"},
 		{ "q": "https://www.mascotarios.org/wp-content/uploads/2011/10/Cotorra-argentina-1.jpg" ,
@@ -424,5 +423,4 @@
 			"a": "Carduelis spinus"},
 		{ "q": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3P8mTqbqPA06KLJ0Y1AiW_rSANjIN0O5iTditeis66lwh-iXeSA&s", 
 			"a": "Carduelis cannabina"}
-	] 
-}
+	];

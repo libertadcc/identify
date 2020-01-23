@@ -1,13 +1,11 @@
 import React from 'react';
 import Header from '../components/Header';
 
-function Home () {
+export default function Home () {
   return (
-    <div>
+    <React.Fragment>
       <Header />
-      <h2>Home</h2>
-    </div>
-  )
+      <h1>HOME</h1>
+    </React.Fragment>
+  );
 }
-
-export default Home;
