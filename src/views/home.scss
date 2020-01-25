@@ -1,0 +1,40 @@
+.container-ppal-menu {
+ max-width: 1000px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-self: center;
+ justify-items: center;
+}
+
+.container-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 25px;
+}
+
+.menu-buttons {
+  justify-items: center;
+  min-width: 240px;
+  place-self: center;
+  cursor: pointer;
+  @media all and(min-width: 950px) {
+    width:440px;
+  }
+}
+
+.menu-content {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  .button-icon {
+    margin-top: 26px;
+    margin-right: 15px;
+    transform: scale(1.4); 
+  }
+  h2 {
+    margin: 15px 0;
+  }
+}

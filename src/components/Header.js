@@ -1,17 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import './header.scss';
+
 function Header () {
   return (
-    <div>
-      <p>Header</p>
-      <ul>
-        <li>
-          <Link to="/">To home</Link>
-        </li>
-        <li>
-          <Link to="/aves">To aves</Link>
-        </li>
-      </ul>
+    <div className="container-header">
+      <Link to="/">
+        <h1 className="title">
+          Visu Quiz
+        </h1>
+      </Link>
     </div>
   );
 }

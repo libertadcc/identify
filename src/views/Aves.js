@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import { birds } from '../data/birds.js';
-import './aves.css';
+import './aves.scss';
 
 let gData = [];
 let gPercentage;
@@ -22,12 +22,17 @@ export default class Aves extends React.Component {
     this.clickOnAnswer3 = this.clickOnAnswer3.bind(this);
     this.clickOnAnswer4 = this.clickOnAnswer4.bind(this);
   }
-  
+
   init() {
     gData = this.state.birdsList;
     gStackQuestions = this.shuffle(gData);
     this.createQuestion();    
   }
+  
+  componentDidMount() {
+    this.init();
+  }
+  
 
 
   shuffle(array) {
@@ -170,8 +175,6 @@ export default class Aves extends React.Component {
   return (
     <React.Fragment>
       <Header />
-      <h1>AVES</h1>
-      <button onClick={this.init}>START</button>
       <main className="main">
             <img 
             id="imgQuestion"
