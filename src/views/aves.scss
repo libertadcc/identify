@@ -1,8 +1,7 @@
 body {
   font-family: 'Raleway', sans-serif;
   margin: 0 auto;
-  max-width: 1000px;
-  padding-top: 20px;
+  max-width: 800px;
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgba(243, 231, 177, 0.75);
   box-sizing: border-box;
@@ -20,38 +19,38 @@ body {
 .imgQuestion {
   border: 5px solid #5E565A;
   border-radius: 25px;
-  background: #F4D06F;
-  padding: 10px;
-  text-transform: capitalize;
   display: flex;
   justify-content: center;
-  max-width: 500px;
-  max-height: 500px;
-  margin: 10px auto;
+  width: 350px;
+  max-height: 400px;
+  margin: 5px auto;
+}
+
+.container-options {
+  max-width: 1000px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-self: center;
+ justify-items: center;
 }
 
 .divAnswers {
-  /* margin: 20px;
-  padding: 15px; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 90px 90px;
   grid-column-gap: 5px;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-transform: capitalize; */
 }
 
 .btnAnswer {
   justify-self: center;
   align-self: stretch;
-  width: 200px;
+  width: 300px;
   max-width: 300px;
   cursor: pointer;
   border-radius: 20px;
   border: 3px solid #5E565A;
-  background-color: #A9CBB7;
+  background-color: #94c1cc82;
   font-size: x-large; 
   margin: 10px 0;
   font-style: oblique;
@@ -78,20 +77,17 @@ body {
 }
 
 .correctAnswer {
-  background-color:#A9CBB7;
+  background-color:#a0db8e;
   margin: 4px;
 }
 
 .incorrectAnswer {
-  background-color: #FF934F;
+  background-color: #f9b2b7;
   margin: 4px;
   text-decoration: line-through;
 }
 
 @media all and (min-width: 768px) {
-  body {
-    padding-top: 20px;
-  }
   .divAnswers {
     flex-direction: row;
     justify-content: space-evenly;

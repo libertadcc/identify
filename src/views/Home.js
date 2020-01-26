@@ -10,31 +10,35 @@ export default function Home () {
       <div className="container-ppal-menu">
         <div className="container-buttons">
           <Link to="/aves">
-            <button className="menu-buttons birds">
+            <button className="menu-buttons birds pulse">
               <div className="menu-content">
                 <i className="button-icon fas fa-crow"></i>
                 <h2>AVES</h2>
               </div>
             </button>
           </Link>
-          <button className="menu-buttons mammals">
-            <div className="menu-content">
-              <i className="button-icon fas fa-hippo"></i>
-              <h2>MAMÍFEROS</h2>
-            </div>
-          </button>
+          <Link to="/mammals">
+            <button className="menu-buttons mammals">
+              <div className="menu-content">
+                <i className="button-icon fas fa-hippo"></i>
+                <h2>MAMÍFEROS</h2>
+              </div>
+            </button>
+          </Link>
           <button className="menu-buttons plants">
             <div className="menu-content">
               <i className="button-icon fas fa-leaf"></i>
               <h2>PLANTAS</h2>
             </div>
           </button>
-          <button className="menu-buttons arthropods">
-            <div className="menu-content">
-              <i className="button-icon fas fa-spider"></i>
-              <h2>ARTRÓPODOS</h2>
-            </div>
-          </button>
+          <Link to="/artropodos">
+            <button className="menu-buttons arthropods">
+              <div className="menu-content">
+                <i className="button-icon fas fa-spider"></i>
+                <h2>ARTRÓPODOS</h2>
+              </div>
+            </button>
+          </Link>
           <button className="menu-buttons cnidarios">
             <div className="menu-content">
               <h2>INV. NO ARTRÓPODOS</h2>
@@ -46,11 +50,14 @@ export default function Home () {
               <h2>MINERALES</h2>
             </div>
           </button>
-          <button className="menu-buttons fossils">
-            <div className="menu-content">
-              <h2>FÓSILES</h2>
-            </div>
-          </button>
+          <Link to="/fosiles">
+            <button className="menu-buttons fossils">
+              <div className="menu-content">
+              <i className="button-icon fas fa-skull"></i>
+                <h2>FÓSILES</h2>
+              </div>
+            </button>
+          </Link>
           <button className="menu-buttons rocks">
             <div className="menu-content">
               <h2>ROCAS</h2>

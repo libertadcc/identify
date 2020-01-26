@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
-import { birds } from '../data/birds.js';
+import { arthropods } from '../data/arthropods.js';
 import './aves.scss';
 
 let gData = [];
@@ -14,7 +14,7 @@ export default class Aves extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      birdsList: birds
+      arthropodsList: arthropods
     }
     this.init = this.init.bind(this);
     this.clickOnAnswer1 = this.clickOnAnswer1.bind(this);
@@ -24,7 +24,7 @@ export default class Aves extends React.Component {
   }
 
   init() {
-    gData = this.state.birdsList;
+    gData = this.state.arthropodsList;
     gStackQuestions = this.shuffle(gData);
     this.createQuestion();    
   }

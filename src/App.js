@@ -2,6 +2,9 @@ import React from 'react';
 import './App.css';
 import Home from './views/Home';
 import Aves from './views/Aves';
+import Fosiles from './views/Fosiles';
+import Arthropods from './views/Arthropods';
+import Mammals from './views/Mammals';
 import { Route, Switch } from 'react-router-dom';
 
 
@@ -12,6 +15,9 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/aves" component={Aves} />
+        <Route path="/fosiles" component={Fosiles} />
+        <Route path="/artropodos" component={Arthropods} />
+        <Route path="/mammals" component={Mammals} />
       </Switch>
     </div>
   );

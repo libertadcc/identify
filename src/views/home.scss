@@ -23,6 +23,52 @@
     width:440px;
   }
 }
+.menu-buttons:hover {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(#a3a8a3,0);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #a3a8a3; }
+}
+
+
+.birds {
+  background-color: #9b6dc6;
+}
+.mammals {
+  background-color: #75b2dd;
+}
+.plants {
+  background-color: #f95951;
+}
+.arthropods {
+  background-color: #60c659;
+}
+.cnidarios {
+  background-color: #a3a8a3;
+}
+.minerals {
+  background-color: #a34402;
+}
+.fossils {
+  background-color: #d11600;
+}
+.rocks {
+  background-color: #e22882;
+}
+.reptiles {
+  background-color: #26686d;
+}
+.amphibians {
+  background-color: #9e2387;
+}
+.fish {
+  background-color: #efea07;
+}
+.reptiles {
+  background-color: #84e2a8;
+}
 
 .menu-content {
   font-family: 'Raleway', sans-serif;
@@ -33,6 +79,7 @@
     margin-top: 26px;
     margin-right: 15px;
     transform: scale(1.4); 
+    height: 30px;
   }
   h2 {
     margin: 15px 0;

@@ -1,0 +1,20 @@
+export const mammals = [
+  {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQoDWu5fynYBupN9sZc1638GKMQa1bJZ8ubmkegYk8gsfHGK77v",
+  "a": "Barbastella barbastellus"},
+  {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRwsfMjIFRkBkAkbXEt_Neid06DOqPqv9Qw_9km9REYmv7sBPBm",
+  "a": "Rhinolophus ferrumequinum"},
+  {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQf1qz3tWKEyIBY69Wl2iaTVQGj8JfB2BsijFYAlW8LOk12P0LW",
+  "a": "Pipistrellus pipistrellus"},
+  {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSohHzYH1wykax7m3Kyz-k-drsEdEtxo55qsTzxCfbcbZawuSYk",
+  "a": "Eptesicus serotinus"},
+  {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ3yUx8DZkMekA1MoTuiqE6iG3Xdbc2S6jNKhHMp4qvD-G9Gg70",
+  "a": "Myotis emarginatus"},
+  {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6ZleoeyW2YLrDcp1RLbQbPyUSi-K26sV0d0NwQ0Ak6VrVDKty",
+  "a": "Plecotus austriacus"},
+  {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTWsp8QEsR6JpcO-0ZtDoR_JelEbdFbg4PWHX6nMcdhv08Is7Dc",
+  "a": "Myotis myotis"},
+  {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRjVpqsexAz8uAv8n0v8LMJmyUJb-d_vaYj5h90DHWa5EImmi6-",
+  "a": "Myotis daubentonii"},
+  {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTz0TnZdH4Nzzb2YQxr0tiE5OK7D2e_x-v6du4VdYi5lRrTBjZr",
+  "a": "Nyctalus leisleri"}
+];
