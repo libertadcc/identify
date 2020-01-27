@@ -39,11 +39,13 @@ export default function Home () {
               </div>
             </button>
           </Link>
-          <button className="menu-buttons cnidarios">
-            <div className="menu-content">
-              <h2>INV. NO ARTRÓPODOS</h2>
-            </div>
-          </button>
+          <Link to="/invertebrates">
+            <button className="menu-buttons cnidarios">
+              <div className="menu-content">
+                <h2>INV. NO ARTRÓPODOS</h2>
+              </div>
+            </button>
+          </Link>
           <button className="menu-buttons minerals">
             <div className="menu-content">
               <i className="button-icon fas fa-gem"></i>

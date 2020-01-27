@@ -5,6 +5,7 @@ import Aves from './views/Aves';
 import Fosiles from './views/Fosiles';
 import Arthropods from './views/Arthropods';
 import Mammals from './views/Mammals';
+import Invertebrados from './views/Invertebrados';
 import { Route, Switch } from 'react-router-dom';
 
 
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/fosiles" component={Fosiles} />
         <Route path="/artropodos" component={Arthropods} />
         <Route path="/mammals" component={Mammals} />
+        <Route path="/invertebrates" component={Invertebrados} />
       </Switch>
     </div>
   );
