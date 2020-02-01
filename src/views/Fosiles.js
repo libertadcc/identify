@@ -56,7 +56,7 @@ export default class Aves extends React.Component {
     while (!found) {
       let randomIndex = Math.floor(Math.random() * gData.length);
       nextCandidate = gData[randomIndex].a;
-      if (nextCandidate !== correctAnswer && listCandidates.indexOf(nextCandidate) == -1) {
+      if (nextCandidate !== correctAnswer && listCandidates.indexOf(nextCandidate) === -1) {
         found = true;
         listCandidates.push(nextCandidate);
       }
@@ -74,7 +74,7 @@ export default class Aves extends React.Component {
   
     for (let i = 1; i < 5; ++i) {
       let tempAnswer = null;
-      if (i == gCorrectAnswerIndex) {
+      if (i === gCorrectAnswerIndex) {
         tempAnswer = selectedQuestion.a;
       } else {
         tempAnswer = this.getNextCandidate(listCandidates, selectedQuestion.a);
@@ -94,7 +94,7 @@ export default class Aves extends React.Component {
     console.log('click on answer1')
     let clickedBtn = "answer1";
     let clickedButton = clickedBtn.substr(clickedBtn.length - 1);
-    let isCorrectAnswer = gCorrectAnswerIndex == clickedButton;
+    let isCorrectAnswer = gCorrectAnswerIndex === clickedButton;
     let text = (gCurrentIndex + 1).toString() + ". ";
     text += (isCorrectAnswer ? gStackQuestions[gCurrentIndex].a : document.getElementById(clickedBtn).innerHTML);
   
@@ -114,7 +114,7 @@ export default class Aves extends React.Component {
     console.log('click on answer2')
     let clickedBtn = "answer2";
     let clickedButton = clickedBtn.substr(clickedBtn.length - 1);
-    let isCorrectAnswer = gCorrectAnswerIndex == clickedButton;
+    let isCorrectAnswer = gCorrectAnswerIndex === clickedButton;
     let text = (gCurrentIndex + 1).toString() + ". ";
     text += (isCorrectAnswer ? gStackQuestions[gCurrentIndex].a : document.getElementById(clickedBtn).innerHTML);
   
@@ -134,7 +134,7 @@ export default class Aves extends React.Component {
     console.log('click on answer3')
     let clickedBtn = "answer3";
     let clickedButton = clickedBtn.substr(clickedBtn.length - 1);
-    let isCorrectAnswer = gCorrectAnswerIndex == clickedButton;
+    let isCorrectAnswer = gCorrectAnswerIndex === clickedButton;
     let text = (gCurrentIndex + 1).toString() + ". ";
     text += (isCorrectAnswer ? gStackQuestions[gCurrentIndex].a : document.getElementById(clickedBtn).innerHTML);
   
@@ -154,7 +154,7 @@ export default class Aves extends React.Component {
     console.log('click on answer4')
     let clickedBtn = "answer4";
     let clickedButton = clickedBtn.substr(clickedBtn.length - 1);
-    let isCorrectAnswer = gCorrectAnswerIndex == clickedButton;
+    let isCorrectAnswer = gCorrectAnswerIndex === clickedButton;
     let text = (gCurrentIndex + 1).toString() + ". ";
     text += (isCorrectAnswer ? gStackQuestions[gCurrentIndex].a : document.getElementById(clickedBtn).innerHTML);
   
@@ -177,6 +177,7 @@ export default class Aves extends React.Component {
       <Header />
       <main className="main">
         <img 
+          alt="Foto de especie"
           id="imgQuestion"
           className="imgQuestion">
         </img>

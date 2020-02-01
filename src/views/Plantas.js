@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
-import { invert } from '../data/invert';
+import { plants } from '../data/plants.js';
 import './aves.scss';
 
 let gData = [];
@@ -10,11 +10,11 @@ let gCurrentIndex = 0;
 let gCorrectAnswerIndex = 0;
 let gNumberOfCorrectAnswers = 0;
 
-export default class Invertebrados extends React.Component {
+export default class Aves extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      invertList: invert
+      plantsList: plants
     }
     this.init = this.init.bind(this);
     this.clickOnAnswer1 = this.clickOnAnswer1.bind(this);
@@ -24,7 +24,7 @@ export default class Invertebrados extends React.Component {
   }
 
   init() {
-    gData = this.state.invertList;
+    gData = this.state.plantsList;
     gStackQuestions = this.shuffle(gData);
     this.createQuestion();    
   }
@@ -33,6 +33,8 @@ export default class Invertebrados extends React.Component {
     this.init();
   }
   
+
+
   shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
     // While there remain elements to shuffle...

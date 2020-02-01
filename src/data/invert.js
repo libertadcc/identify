@@ -78,5 +78,19 @@ export const invert = [
   {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRase4Bx7jC2UF7-bJyyjLDnJvgQgi1iSjUkTqQXM6t-LGcVkXP",
   "a": "Tubipora musica"},
   {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSeD5L9xblI0kvz5qCltLDCHwuvN7WvzkTDy4SIHNLQ136i6DHr",
-  "a": "Hirudo medicinalis"}
+  "a": "Hirudo medicinalis"},
+  {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTbEmX0zIo6RuLZOz8p8Y6PyQup01Be6ayoo7ehmKrFw1CTstq9",
+  "a": "Paracentrotus lividus"},
+  {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQx_mY38ckcRZZoUPEnPxBK3grXLXwBAD74w1i8gTUt9BuYElys",
+  "a": "Arbacia lixula"},
+  {"q": "https://litoraldegranada.ugr.es/wp-content/uploads/2017/03/PB050074.jpg",
+  "a": "Sphaerechinus granularis"},
+  {"q": "https://upload.wikimedia.org/wikipedia/commons/6/63/Heterocentrotus_mammillatus_in_situ_from_Hawaii.JPG",
+  "a": "Heterocentrotus mammillatus"},
+  {"q": "https://i.pinimg.com/originals/7c/ed/df/7ceddfc097f2f769991b09b9cd932cd3.jpg",
+  "a": "Marthasterias glacialis"},
+  {"q": "https://www.cibsub.cat/rcs_gene/Echinaster_sepositus02_1.jpg",
+  "a": "Echinaster sepositus"},
+  {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTu74KIU-tvOyuJ3GUxr1crObmM38JFbmKMTT7KUIZu3jQpMgMc",
+  "a": "Astropecten aranciacus"}
 ];

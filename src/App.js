@@ -6,6 +6,7 @@ import Fosiles from './views/Fosiles';
 import Arthropods from './views/Arthropods';
 import Mammals from './views/Mammals';
 import Invertebrados from './views/Invertebrados';
+import Plantas from './views/Plantas';
 import { Route, Switch } from 'react-router-dom';
 
 
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/artropodos" component={Arthropods} />
         <Route path="/mammals" component={Mammals} />
         <Route path="/invertebrates" component={Invertebrados} />
+        <Route path="/plants" component={Plantas} />
       </Switch>
     </div>
   );
