@@ -21,31 +21,39 @@ body {
   border-radius: 25px;
   display: flex;
   justify-content: center;
-  width: 350px;
+  width: auto;
   max-height: 400px;
   margin: 5px auto;
+  @media all and (min-width: 660px) {
+    width: 350px;
+  }
 }
 
 .container-options {
   max-width: 1000px;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-self: center;
- justify-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  justify-items: center;
 }
 
 .divAnswers {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 90px 90px;
-  grid-column-gap: 5px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px;
+  grid-column-gap: 2px;
+  @media all and(min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 80px;
+    grid-column-gap: 5px;
+  }
 }
 
 .btnAnswer {
   justify-self: center;
   align-self: stretch;
-  width: 300px;
+  min-width: 250px;
   max-width: 300px;
   cursor: pointer;
   border-radius: 20px;
@@ -54,6 +62,10 @@ body {
   font-size: x-large; 
   margin: 10px 0;
   font-style: oblique;
+  font-size: 19px;
+  @media all and (min-width: 360px) {
+    font-size: 23px
+  }
 }
 
 .divResults {
