@@ -54,12 +54,13 @@ export default function Home () {
             </button>
           </Link>
 
-          <button className="menu-buttons minerals">
+          <button className="menu-buttons minerals" disabled>
             <div className="menu-content">
               <i className="button-icon fas fa-gem"></i>
               <h2>MINERALES</h2>
             </div>
           </button>
+
           <Link to="/fosiles">
             <button className="menu-buttons fossils">
               <div className="menu-content">
@@ -68,25 +69,35 @@ export default function Home () {
               </div>
             </button>
           </Link>
-          <button className="menu-buttons rocks">
-            <div className="menu-content">
-              <img className="button-icon img-icon" alt="Icono rocas" src="https://img.icons8.com/ios-glyphs/30/000000/rock.png"/>
-              <h2>ROCAS</h2>
-            </div>
-          </button>
-          <button className="menu-buttons reptiles">
-            <div className="menu-content">
-              <img className="button-icon img-icon" alt="Icono reptiles" src="https://img.icons8.com/dotty/80/000000/cobra.png" />
-              <h2>REPTILES</h2>
-            </div>
-          </button>
-          <button className="menu-buttons amphibians">
-            <div className="menu-content">
-              <i className="button-icon fas fa-frog"></i>
-              <h2>ANFIBIOS</h2>
-            </div>
-          </button>
-          <button className="menu-buttons fish">
+
+          <Link to="/rocks">
+            <button className="menu-buttons rocks">
+              <div className="menu-content">
+                <img className="button-icon img-icon" alt="Icono rocas" src="https://img.icons8.com/ios-glyphs/30/000000/rock.png"/>
+                <h2>ROCAS</h2>
+              </div>
+            </button>
+          </Link>
+
+          <Link to="/reptiles">
+            <button className="menu-buttons reptiles">
+              <div className="menu-content">
+                <img className="button-icon img-icon" alt="Icono reptiles" src="https://img.icons8.com/dotty/80/000000/cobra.png" />
+                <h2>REPTILES</h2>
+              </div>
+            </button>
+          </Link>
+
+          <Link to="/amphibians">
+            <button className="menu-buttons amphibians">
+              <div className="menu-content">
+                <i className="button-icon fas fa-frog"></i>
+                <h2>ANFIBIOS</h2>
+              </div>
+            </button>
+          </Link>
+
+          <button className="menu-buttons fish" disabled>
             <div className="menu-content">
               <i className="button-icon fas fa-fish"></i>
               <h2>PECES</h2>

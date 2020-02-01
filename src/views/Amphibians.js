@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
-import { mammals } from '../data/mammals.js';
+import { amphibians } from '../data/amphibians.js';
 import './aves.scss';
 
 let gData = [];
@@ -14,7 +14,7 @@ export default class Aves extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      mammalsList: mammals
+      amphibiansList: amphibians
     }
     this.init = this.init.bind(this);
     this.clickOnAnswer1 = this.clickOnAnswer1.bind(this);
@@ -24,7 +24,7 @@ export default class Aves extends React.Component {
   }
 
   init() {
-    gData = this.state.mammalsList;
+    gData = this.state.amphibiansList;
     gStackQuestions = this.shuffle(gData);
     this.createQuestion();    
   }
@@ -71,6 +71,7 @@ export default class Aves extends React.Component {
   
     let listCandidates = [];
     gCorrectAnswerIndex = Math.floor(Math.random() * 4) + 1;
+  
     for (let i = 1; i < 5; ++i) {
       let tempAnswer = null;
       if (i === gCorrectAnswerIndex) {
@@ -90,8 +91,9 @@ export default class Aves extends React.Component {
   }
   
   clickOnAnswer1() {
+    console.log('click on answer1')
     let clickedBtn = "answer1";
-    let clickedButton = parseInt(clickedBtn.substr(clickedBtn.length - 1));
+    let clickedButton = clickedBtn.substr(clickedBtn.length - 1);
     let isCorrectAnswer = gCorrectAnswerIndex === clickedButton;
     let text = (gCurrentIndex + 1).toString() + ". ";
     text += (isCorrectAnswer ? gStackQuestions[gCurrentIndex].a : document.getElementById(clickedBtn).innerHTML);
@@ -109,8 +111,9 @@ export default class Aves extends React.Component {
     document.getElementById("idResultsPercentage").innerHTML = "Resultados: " + gPercentage + "%";
   }
   clickOnAnswer2() {
+    console.log('click on answer2')
     let clickedBtn = "answer2";
-    let clickedButton = parseInt(clickedBtn.substr(clickedBtn.length - 1));
+    let clickedButton = clickedBtn.substr(clickedBtn.length - 1);
     let isCorrectAnswer = gCorrectAnswerIndex === clickedButton;
     let text = (gCurrentIndex + 1).toString() + ". ";
     text += (isCorrectAnswer ? gStackQuestions[gCurrentIndex].a : document.getElementById(clickedBtn).innerHTML);
@@ -128,8 +131,9 @@ export default class Aves extends React.Component {
     document.getElementById("idResultsPercentage").innerHTML = "Resultados: " + gPercentage + "%";
   }
   clickOnAnswer3() {
+    console.log('click on answer3')
     let clickedBtn = "answer3";
-    let clickedButton = parseInt(clickedBtn.substr(clickedBtn.length - 1));
+    let clickedButton = clickedBtn.substr(clickedBtn.length - 1);
     let isCorrectAnswer = gCorrectAnswerIndex === clickedButton;
     let text = (gCurrentIndex + 1).toString() + ". ";
     text += (isCorrectAnswer ? gStackQuestions[gCurrentIndex].a : document.getElementById(clickedBtn).innerHTML);
@@ -146,10 +150,10 @@ export default class Aves extends React.Component {
     gPercentage = Math.round(gPercentage * 100) / 100;
     document.getElementById("idResultsPercentage").innerHTML = "Resultados: " + gPercentage + "%";
   }
-
   clickOnAnswer4() {
+    console.log('click on answer4')
     let clickedBtn = "answer4";
-    let clickedButton = parseInt(clickedBtn.substr(clickedBtn.length - 1));
+    let clickedButton = clickedBtn.substr(clickedBtn.length - 1);
     let isCorrectAnswer = gCorrectAnswerIndex === clickedButton;
     let text = (gCurrentIndex + 1).toString() + ". ";
     text += (isCorrectAnswer ? gStackQuestions[gCurrentIndex].a : document.getElementById(clickedBtn).innerHTML);

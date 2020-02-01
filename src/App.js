@@ -4,6 +4,9 @@ import Home from './views/Home';
 import Aves from './views/Aves';
 import Fosiles from './views/Fosiles';
 import Arthropods from './views/Arthropods';
+import Amphibians from './views/Amphibians';
+import Reptiles from './views/Reptiles';
+import Rocks from './views/Rocks';
 import Mammals from './views/Mammals';
 import Invertebrados from './views/Invertebrados';
 import Plantas from './views/Plantas';
@@ -22,6 +25,9 @@ export default function App() {
         <Route path="/mammals" component={Mammals} />
         <Route path="/invertebrates" component={Invertebrados} />
         <Route path="/plants" component={Plantas} />
+        <Route path="/amphibians" component={Amphibians} />
+        <Route path="/reptiles" component={Reptiles} />
+        <Route path="/rocks" component={Rocks} />
       </Switch>
     </div>
   );
