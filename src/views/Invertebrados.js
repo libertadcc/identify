@@ -89,9 +89,8 @@ export default class Invertebrados extends React.Component {
   }
   
   clickOnAnswer1() {
-    console.log('click on answer1')
     let clickedBtn = "answer1";
-    let clickedButton = clickedBtn.substr(clickedBtn.length - 1);
+    let clickedButton = parseInt(clickedBtn.substr(clickedBtn.length - 1));
     let isCorrectAnswer = gCorrectAnswerIndex === clickedButton;
     let text = (gCurrentIndex + 1).toString() + ". ";
     text += (isCorrectAnswer ? gStackQuestions[gCurrentIndex].a : document.getElementById(clickedBtn).innerHTML);
@@ -109,9 +108,8 @@ export default class Invertebrados extends React.Component {
     document.getElementById("idResultsPercentage").innerHTML = "Resultados: " + gPercentage + "%";
   }
   clickOnAnswer2() {
-    console.log('click on answer2')
     let clickedBtn = "answer2";
-    let clickedButton = clickedBtn.substr(clickedBtn.length - 1);
+    let clickedButton = parseInt(clickedBtn.substr(clickedBtn.length - 1));
     let isCorrectAnswer = gCorrectAnswerIndex === clickedButton;
     let text = (gCurrentIndex + 1).toString() + ". ";
     text += (isCorrectAnswer ? gStackQuestions[gCurrentIndex].a : document.getElementById(clickedBtn).innerHTML);
@@ -129,9 +127,8 @@ export default class Invertebrados extends React.Component {
     document.getElementById("idResultsPercentage").innerHTML = "Resultados: " + gPercentage + "%";
   }
   clickOnAnswer3() {
-    console.log('click on answer3')
     let clickedBtn = "answer3";
-    let clickedButton = clickedBtn.substr(clickedBtn.length - 1);
+    let clickedButton = parseInt(clickedBtn.substr(clickedBtn.length - 1));
     let isCorrectAnswer = gCorrectAnswerIndex === clickedButton;
     let text = (gCurrentIndex + 1).toString() + ". ";
     text += (isCorrectAnswer ? gStackQuestions[gCurrentIndex].a : document.getElementById(clickedBtn).innerHTML);
@@ -148,10 +145,10 @@ export default class Invertebrados extends React.Component {
     gPercentage = Math.round(gPercentage * 100) / 100;
     document.getElementById("idResultsPercentage").innerHTML = "Resultados: " + gPercentage + "%";
   }
+
   clickOnAnswer4() {
-    console.log('click on answer4')
     let clickedBtn = "answer4";
-    let clickedButton = clickedBtn.substr(clickedBtn.length - 1);
+    let clickedButton = parseInt(clickedBtn.substr(clickedBtn.length - 1));
     let isCorrectAnswer = gCorrectAnswerIndex === clickedButton;
     let text = (gCurrentIndex + 1).toString() + ". ";
     text += (isCorrectAnswer ? gStackQuestions[gCurrentIndex].a : document.getElementById(clickedBtn).innerHTML);
