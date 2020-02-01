@@ -9,9 +9,13 @@
 
 .container-buttons {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  grid-gap: 25px;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+  @media all and (min-width:360px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+  }
 }
 
 .menu-buttons {
@@ -52,6 +56,19 @@
 }
 .cnidarios {
   background-color: #a3a8a3;
+  width: 66px;
+  @media all and(min-width:950px) {
+    width: 440px;
+  }
+  .img-icon {
+    margin-top: 18px !important;
+    margin-left: 10px !important;
+    margin-right: 0px !important;
+    @media all and(min-width: 950px) {
+      margin-top: 18px !important;
+      margin-right: 15px !important; 
+    }
+  }
 }
 .minerals {
   background-color: #a34402;
