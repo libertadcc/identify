@@ -71,7 +71,7 @@ export default function Home () {
           </Link>
 
           <Link to="/rocks">
-            <button className="menu-buttons rocks">
+            <button className="menu-buttons rocks" disabled>
               <div className="menu-content">
                 <img className="button-icon img-icon" alt="Icono rocas" src="https://img.icons8.com/ios-glyphs/30/000000/rock.png"/>
                 <h2>ROCAS</h2>

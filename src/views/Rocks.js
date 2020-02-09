@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
+import { Image } from '../components/Image';
 import { rocks } from '../data/rocks.js';
 import './aves.scss';
 
@@ -173,11 +174,7 @@ export default class Aves extends React.Component {
     <React.Fragment>
       <Header />
       <main className="main">
-        <img 
-          alt="Foto de especie"
-          id="imgQuestion"
-          className="imgQuestion">
-        </img>
+        <Image />
         <div className="container-options">
           <div id="idAnswers" className="divGeneral divAnswers">
             <button 
