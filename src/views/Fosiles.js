@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import { Image } from '../components/Image';
+import { Results } from '../components/Results';
 import { fossils } from '../data/fossils.js';
 import './aves.scss';
 
@@ -207,16 +208,7 @@ export default class Aves extends React.Component {
             </button>
           </div>
         </div>
-        <div id="idDivResults" className="divGeneral divResults">
-          <div id="idTitleResults">
-            <span 
-            className="idResultsPercentage" 
-            id="idResultsPercentage">
-              Resultados %
-            </span>
-          </div>
-          <div id="divResultsSpan"></div>
-        </div>
+        <Results />
       </main>
     </React.Fragment>
   );

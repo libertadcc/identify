@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import { Image } from '../components/Image';
 import { invert } from '../data/invert';
 import './aves.scss';
+import { Results } from '../components/Results';
 
 let gData = [];
 let gPercentage;
@@ -205,16 +206,7 @@ export default class Invertebrados extends React.Component {
             </button>
           </div>
         </div>
-        <div id="idDivResults" className="divGeneral divResults">
-          <div id="idTitleResults">
-            <span 
-            className="idResultsPercentage" 
-            id="idResultsPercentage">
-              Resultados %
-            </span>
-          </div>
-          <div id="divResultsSpan"></div>
-        </div>
+        <Results />
       </main>
     </React.Fragment>
   );
