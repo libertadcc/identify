@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { Image } from '../components/Image';
 import { Results } from '../components/Results';
 import { amphibians } from '../data/amphibians.js';
+import { ShowResult } from '../components/ShowResult';
 import './aves.scss';
 
 let gData = [];
@@ -16,7 +18,9 @@ export default class Aves extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      amphibiansList: amphibians
+      amphibiansList: amphibians,
+      correctAnswerArray: [],
+      incorrectAnswerArray: []
     }
     this.init = this.init.bind(this);
     this.clickOnAnswer1 = this.clickOnAnswer1.bind(this);
@@ -89,7 +93,19 @@ export default class Aves extends React.Component {
     var spanAnswer = document.createElement('span')
     spanAnswer.innerHTML = text;
     spanAnswer.setAttribute('class', isCorrect ? "correctAnswer" : "incorrectAnswer");
-    document.getElementById("divResultsSpan").appendChild(spanAnswer);
+    // document.getElementById("divResultsSpan").appendChild(spanAnswer);
+    
+    if(isCorrect === true) {
+      this.setState(
+        this.state.correctAnswerArray = this.state.correctAnswerArray.concat(text)
+      )
+    } else {
+      this.setState (
+        this.state.incorrectAnswerArray = this.state.incorrectAnswerArray.concat(text)
+      )
+    }
+    console.log('correct', this.state.correctAnswerArray);
+    console.log('incorrect', this.state.incorrectAnswerArray)    
   }
   
   clickOnAnswer1() {
@@ -109,7 +125,7 @@ export default class Aves extends React.Component {
   
     gPercentage = (gNumberOfCorrectAnswers / gCurrentIndex) * 100.0;
     gPercentage = Math.round(gPercentage * 100) / 100;
-    document.getElementById("idResultsPercentage").innerHTML = "Resultados: " + gPercentage + "%";
+    document.getElementById("idResultsPercentage").innerHTML = "📊 Resultados: " + gPercentage + "%";
   }
   clickOnAnswer2() {
     let clickedBtn = "answer2";
@@ -149,7 +165,6 @@ export default class Aves extends React.Component {
     gPercentage = Math.round(gPercentage * 100) / 100;
     document.getElementById("idResultsPercentage").innerHTML = "Resultados: " + gPercentage + "%";
   }
-
   clickOnAnswer4() {
     let clickedBtn = "answer4";
     let clickedButton = parseInt(clickedBtn.substr(clickedBtn.length - 1));
@@ -168,6 +183,15 @@ export default class Aves extends React.Component {
     gPercentage = (gNumberOfCorrectAnswers / gCurrentIndex) * 100.0;
     gPercentage = Math.round(gPercentage * 100) / 100;
     document.getElementById("idResultsPercentage").innerHTML = "Resultados: " + gPercentage + "%";
+  }
+
+  showResults() {
+    const {correctAnswerArray, incorrectAnswerArray} = this.state;
+    return (
+      <ShowResult 
+        correctAnswer={correctAnswerArray} 
+        incorrectAnswer={incorrectAnswerArray} />
+    );
   }
 
   render (){ 
@@ -209,6 +233,13 @@ export default class Aves extends React.Component {
           </div>
         </div>
         <Results />
+        {/* <Link to="/results">
+          <button onClick={this.showResults}>Show me the results</button>
+        </Link> */}
+
+        <ShowResult 
+          correctAnswer={this.state.correctAnswerArray} 
+          incorrectAnswer={this.state.incorrectAnswerArray} />
       </main>
     </React.Fragment>
   );

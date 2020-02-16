@@ -6,9 +6,10 @@ function Header () {
   return (
     <div className="container-header">
       <Link to="/">
-        <h1 className="title">
-          Visu Quiz
-        </h1>
+        <div className="header">
+          {/* <i className="fas fa-arrow-left"></i> */}
+          <h1 className="title">Visu Quiz</h1>
+        </div>
       </Link>
     </div>
   );

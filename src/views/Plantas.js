@@ -4,6 +4,7 @@ import { Image } from '../components/Image';
 import { plants } from '../data/plants.js';
 import './aves.scss';
 import { Results } from '../components/Results';
+import { ShowResult } from '../components/ShowResult';
 
 let gData = [];
 let gPercentage;
@@ -16,7 +17,9 @@ export default class Aves extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      plantsList: plants
+      plantsList: plants,
+      correctAnswerArray: [],
+      incorrectAnswerArray: []
     }
     this.init = this.init.bind(this);
     this.clickOnAnswer1 = this.clickOnAnswer1.bind(this);
@@ -89,85 +92,60 @@ export default class Aves extends React.Component {
     var spanAnswer = document.createElement('span')
     spanAnswer.innerHTML = text;
     spanAnswer.setAttribute('class', isCorrect ? "correctAnswer" : "incorrectAnswer");
-    document.getElementById("divResultsSpan").appendChild(spanAnswer);
+    //document.getElementById("divResultsSpan").appendChild(spanAnswer);
+    if(isCorrect === true) {
+      this.setState(
+        this.state.correctAnswerArray = this.state.correctAnswerArray.concat(text)
+      )
+    } else {
+      this.setState (
+        this.state.incorrectAnswerArray = this.state.incorrectAnswerArray.concat(text)
+      )
+    }
+    console.log('correct', this.state.correctAnswerArray);
+    console.log('incorrect', this.state.incorrectAnswerArray)   
   }
+
+  getAnswer (clickedButton, clickedBtn) {
+    let isCorrectAnswer = gCorrectAnswerIndex === clickedButton;
+    let text = (gCurrentIndex + 1).toString() + ". ";
+    text += (isCorrectAnswer ? gStackQuestions[gCurrentIndex].a : document.getElementById(clickedBtn).innerHTML);
   
+    this.createSpanResult(text, isCorrectAnswer);
+  
+    if (isCorrectAnswer) {
+      ++gNumberOfCorrectAnswers;
+    }
+    ++gCurrentIndex;
+    this.createQuestion();
+  
+    gPercentage = (gNumberOfCorrectAnswers / gCurrentIndex) * 100.0;
+    gPercentage = Math.round(gPercentage * 100) / 100;
+    document.getElementById("idResultsPercentage").innerHTML = "📊 Resultados: " + gPercentage + "%";
+  }
+
   clickOnAnswer1() {
     let clickedBtn = "answer1";
     let clickedButton = parseInt(clickedBtn.substr(clickedBtn.length - 1));
-    let isCorrectAnswer = gCorrectAnswerIndex === clickedButton;
-    let text = (gCurrentIndex + 1).toString() + ". ";
-    text += (isCorrectAnswer ? gStackQuestions[gCurrentIndex].a : document.getElementById(clickedBtn).innerHTML);
-  
-    this.createSpanResult(text, isCorrectAnswer);
-  
-    if (isCorrectAnswer) {
-      ++gNumberOfCorrectAnswers;
-    }
-    ++gCurrentIndex;
-    this.createQuestion();
-  
-    gPercentage = (gNumberOfCorrectAnswers / gCurrentIndex) * 100.0;
-    gPercentage = Math.round(gPercentage * 100) / 100;
-    document.getElementById("idResultsPercentage").innerHTML = "Resultados: " + gPercentage + "%";
+    this.getAnswer(clickedButton, clickedBtn);
   }
+
   clickOnAnswer2() {
     let clickedBtn = "answer2";
     let clickedButton = parseInt(clickedBtn.substr(clickedBtn.length - 1));
-    let isCorrectAnswer = gCorrectAnswerIndex === clickedButton;
-    let text = (gCurrentIndex + 1).toString() + ". ";
-    text += (isCorrectAnswer ? gStackQuestions[gCurrentIndex].a : document.getElementById(clickedBtn).innerHTML);
-  
-    this.createSpanResult(text, isCorrectAnswer);
-  
-    if (isCorrectAnswer) {
-      ++gNumberOfCorrectAnswers;
-    }
-    ++gCurrentIndex;
-    this.createQuestion();
-  
-    gPercentage = (gNumberOfCorrectAnswers / gCurrentIndex) * 100.0;
-    gPercentage = Math.round(gPercentage * 100) / 100;
-    document.getElementById("idResultsPercentage").innerHTML = "Resultados: " + gPercentage + "%";
+    this.getAnswer(clickedButton, clickedBtn);
   }
+
   clickOnAnswer3() {
     let clickedBtn = "answer3";
     let clickedButton = parseInt(clickedBtn.substr(clickedBtn.length - 1));
-    let isCorrectAnswer = gCorrectAnswerIndex === clickedButton;
-    let text = (gCurrentIndex + 1).toString() + ". ";
-    text += (isCorrectAnswer ? gStackQuestions[gCurrentIndex].a : document.getElementById(clickedBtn).innerHTML);
-  
-    this.createSpanResult(text, isCorrectAnswer);
-  
-    if (isCorrectAnswer) {
-      ++gNumberOfCorrectAnswers;
-    }
-    ++gCurrentIndex;
-    this.createQuestion();
-  
-    gPercentage = (gNumberOfCorrectAnswers / gCurrentIndex) * 100.0;
-    gPercentage = Math.round(gPercentage * 100) / 100;
-    document.getElementById("idResultsPercentage").innerHTML = "Resultados: " + gPercentage + "%";
+    this.getAnswer(clickedButton, clickedBtn);
   }
 
   clickOnAnswer4() {
     let clickedBtn = "answer4";
     let clickedButton = parseInt(clickedBtn.substr(clickedBtn.length - 1));
-    let isCorrectAnswer = gCorrectAnswerIndex === clickedButton;
-    let text = (gCurrentIndex + 1).toString() + ". ";
-    text += (isCorrectAnswer ? gStackQuestions[gCurrentIndex].a : document.getElementById(clickedBtn).innerHTML);
-  
-    this.createSpanResult(text, isCorrectAnswer);
-  
-    if (isCorrectAnswer) {
-      ++gNumberOfCorrectAnswers;
-    }
-    ++gCurrentIndex;
-    this.createQuestion();
-  
-    gPercentage = (gNumberOfCorrectAnswers / gCurrentIndex) * 100.0;
-    gPercentage = Math.round(gPercentage * 100) / 100;
-    document.getElementById("idResultsPercentage").innerHTML = "Resultados: " + gPercentage + "%";
+    this.getAnswer(clickedButton, clickedBtn);
   }
 
   render (){ 
@@ -209,6 +187,9 @@ export default class Aves extends React.Component {
           </div>
         </div>
         <Results />
+        <ShowResult 
+            correctAnswer={this.state.correctAnswerArray} 
+            incorrectAnswer={this.state.incorrectAnswerArray} />
       </main>
     </React.Fragment>
   );

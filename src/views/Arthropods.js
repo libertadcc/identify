@@ -4,6 +4,7 @@ import { Image } from '../components/Image';
 import { arthropods } from '../data/arthropods.js';
 import './aves.scss';
 import { Results } from '../components/Results';
+import { ShowResult } from '../components/ShowResult';
 
 let gData = [];
 let gPercentage;
@@ -16,7 +17,9 @@ export default class Aves extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      arthropodsList: arthropods
+      arthropodsList: arthropods,
+      correctAnswerArray: [],
+      incorrectAnswerArray: []
     }
     this.init = this.init.bind(this);
     this.clickOnAnswer1 = this.clickOnAnswer1.bind(this);
@@ -89,7 +92,7 @@ export default class Aves extends React.Component {
     var spanAnswer = document.createElement('span')
     spanAnswer.innerHTML = text;
     spanAnswer.setAttribute('class', isCorrect ? "correctAnswer" : "incorrectAnswer");
-    document.getElementById("divResultsSpan").appendChild(spanAnswer);
+    //document.getElementById("divResultsSpan").appendChild(spanAnswer);
   }
   
   clickOnAnswer1() {
@@ -209,6 +212,9 @@ export default class Aves extends React.Component {
           </div>
         </div>
         <Results/>
+        <ShowResult 
+          correctAnswer={this.state.correctAnswerArray} 
+          incorrectAnswer={this.state.incorrectAnswerArray} />
       </main>
     </React.Fragment>
   );

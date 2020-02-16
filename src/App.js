@@ -11,8 +11,7 @@ import Mammals from './views/Mammals';
 import Invertebrados from './views/Invertebrados';
 import Plantas from './views/Plantas';
 import { Route, Switch } from 'react-router-dom';
-
-
+import { ShowResult } from './components/ShowResult';
 
 export default function App() {
   return (
@@ -28,6 +27,7 @@ export default function App() {
         <Route path="/amphibians" component={Amphibians} />
         <Route path="/reptiles" component={Reptiles} />
         <Route path="/rocks" component={Rocks} />
+        <Route path="/results" component={ShowResult} />
       </Switch>
     </div>
   );

@@ -1,0 +1,11 @@
+.results {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.list-result {
+  list-style-type: none;
+  margin: 0; 
+  padding: 0;
+}

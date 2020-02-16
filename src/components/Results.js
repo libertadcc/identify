@@ -7,10 +7,10 @@ export function Results () {
         <span 
           className="idResultsPercentage" 
           id="idResultsPercentage">
-          Resultados %
+          📊 Resultados %
         </span>
       </div>
-      <div id="divResultsSpan"></div>
+      {/* <div id="divResultsSpan"></div> */}
     </div>
   );
 }
