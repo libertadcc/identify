@@ -5,7 +5,6 @@ import './results.scss';
 export function ShowResult ({correctAnswer, incorrectAnswer}) {
 
   const mapCorrect = () => {
-    console.log('showCorrect', correctAnswer)
     if (correctAnswer != undefined) {
       return (
         <ul className="list-result" >{correctAnswer.map((item, id) => {
