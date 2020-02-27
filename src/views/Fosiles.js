@@ -102,22 +102,34 @@ export default class Aves extends React.Component {
         this.state.incorrectAnswerArray = this.state.incorrectAnswerArray.concat(text)
       )
     }
-    console.log('correct', this.state.correctAnswerArray);
-    console.log('incorrect', this.state.incorrectAnswerArray)   
   }
 
   getAnswer (clickedButton, clickedBtn) {
     let isCorrectAnswer = gCorrectAnswerIndex === clickedButton;
     let text = (gCurrentIndex + 1).toString() + ". ";
     text += (isCorrectAnswer ? gStackQuestions[gCurrentIndex].a : document.getElementById(clickedBtn).innerHTML);
-  
+
+    let element = document.getElementById(clickedBtn);
+    if(isCorrectAnswer) {
+      element.classList.add('correct-answer');
+      setTimeout(function () {
+        element.classList.remove('correct-answer');
+      }, 400);
+    } else {
+      element.classList.add('incorrect-answer');
+      setTimeout(function () {
+        element.classList.remove('incorrect-answer');
+      }, 400);
+    }
+
     this.createSpanResult(text, isCorrectAnswer);
   
     if (isCorrectAnswer) {
       ++gNumberOfCorrectAnswers;
     }
     ++gCurrentIndex;
-    this.createQuestion();
+    setTimeout(function () { this.createQuestion();}.bind(this),
+      800);
   
     gPercentage = (gNumberOfCorrectAnswers / gCurrentIndex) * 100.0;
     gPercentage = Math.round(gPercentage * 100) / 100;

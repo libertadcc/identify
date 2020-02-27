@@ -140,3 +140,14 @@ body {
 .display-none {
   display: none;
 }
+
+.correct-answer {
+  background-color: rgb(102, 185, 102);
+  color: white;
+  border: none;
+}
+.incorrect-answer {
+  background-color: rgba(248, 60, 60, 0.801);
+  color: white;
+  border: none;
+}
