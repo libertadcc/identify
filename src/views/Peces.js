@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import { Image } from '../components/Image';
 import { Results } from '../components/Results';
-import { amphibians } from '../data/amphibians.js';
+import { fishes } from '../data/fishes.js';
 import { ShowResult } from '../components/ShowResult';
 import './aves.scss';
 
@@ -13,11 +13,11 @@ let gCurrentIndex = 0;
 let gCorrectAnswerIndex = 0;
 let gNumberOfCorrectAnswers = 0;
 
-export default class Aves extends React.Component {
+export default class Peces extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      amphibiansList: amphibians,
+      fishesList: fishes,
       correctAnswerArray: [],
       incorrectAnswerArray: []
     }
@@ -26,10 +26,11 @@ export default class Aves extends React.Component {
     this.clickOnAnswer2 = this.clickOnAnswer2.bind(this);
     this.clickOnAnswer3 = this.clickOnAnswer3.bind(this);
     this.clickOnAnswer4 = this.clickOnAnswer4.bind(this);
+    this.getAnswer = this.getAnswer.bind(this);
   }
 
   init() {
-    gData = this.state.amphibiansList;
+    gData = this.state.fishesList;
     gStackQuestions = this.shuffle(gData);
     this.createQuestion();    
   }
@@ -37,8 +38,6 @@ export default class Aves extends React.Component {
   componentDidMount() {
     this.init();
   }
-  
-
 
   shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -92,8 +91,8 @@ export default class Aves extends React.Component {
     var spanAnswer = document.createElement('span')
     spanAnswer.innerHTML = text;
     spanAnswer.setAttribute('class', isCorrect ? "correctAnswer" : "incorrectAnswer");
-    // document.getElementById("divResultsSpan").appendChild(spanAnswer);
-    
+    //document.getElementById("divResultsSpan").appendChild(spanAnswer);
+
     if(isCorrect === true) {
       this.setState(
         this.state.correctAnswerArray = this.state.correctAnswerArray.concat(text)
@@ -102,7 +101,7 @@ export default class Aves extends React.Component {
       this.setState (
         this.state.incorrectAnswerArray = this.state.incorrectAnswerArray.concat(text)
       )
-    }  
+    }
   }
 
   getAnswer (clickedButton, clickedBtn) {
@@ -160,7 +159,7 @@ export default class Aves extends React.Component {
     let clickedButton = parseInt(clickedBtn.substr(clickedBtn.length - 1));
     this.getAnswer(clickedButton, clickedBtn);
   }
-  
+
   render (){ 
   return (
     <React.Fragment>
@@ -200,13 +199,9 @@ export default class Aves extends React.Component {
           </div>
         </div>
         <Results />
-        {/* <Link to="/results">
-          <button onClick={this.showResults}>Show me the results</button>
-        </Link> */}
-
         <ShowResult 
-          correctAnswer={this.state.correctAnswerArray} 
-          incorrectAnswer={this.state.incorrectAnswerArray} />
+            correctAnswer={this.state.correctAnswerArray} 
+            incorrectAnswer={this.state.incorrectAnswerArray} />
       </main>
     </React.Fragment>
   );

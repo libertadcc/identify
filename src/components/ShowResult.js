@@ -5,7 +5,7 @@ import './results.scss';
 export function ShowResult ({correctAnswer, incorrectAnswer}) {
 
   const mapCorrect = () => {
-    if (correctAnswer != undefined) {
+    if (correctAnswer !== undefined) {
       return (
         <ul className="list-result" >{correctAnswer.map((item, id) => {
           return (
@@ -17,7 +17,7 @@ export function ShowResult ({correctAnswer, incorrectAnswer}) {
   }
 
   const mapIncorrect = () => {
-    if (incorrectAnswer != undefined) {
+    if (incorrectAnswer !== undefined) {
       return (
         <ul className="list-result">{incorrectAnswer.map((item, id) => {
           return (
@@ -31,12 +31,12 @@ export function ShowResult ({correctAnswer, incorrectAnswer}) {
   return (
     <div className="results">
       <div className="block-results">
-        <h3>Correctas ✅</h3>
+        <h3>Correctas <span role="img" alt="correct">✅</span></h3>
           {mapCorrect()}
       </div> 
         
       <div className="block-results">
-        <h3>Incorrectas ❌</h3>
+        <h3>Incorrectas <span role="img" alt="incorrect">❌</span></h3>
           {mapIncorrect()}
       </div> 
     </div>

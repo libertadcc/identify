@@ -97,12 +97,14 @@ export default function Home () {
             </button>
           </Link>
 
-          <button className="menu-buttons fish" disabled>
-            <div className="menu-content">
-              <i className="button-icon fas fa-fish"></i>
-              <h2>PECES</h2>
-            </div>
-          </button>
+          <Link to="/hola">
+            <button className="menu-buttons fish">
+              <div className="menu-content">
+                <i className="button-icon fas fa-fish"></i>
+                <h2>PECES</h2>
+              </div>
+            </button>
+          </Link>
         </div>
       </div>
     </React.Fragment>
