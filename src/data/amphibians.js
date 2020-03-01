@@ -52,5 +52,15 @@ export const amphibians = [
   {"q": "https://1.bp.blogspot.com/-V3rYSqKky1M/Uf8PXDDeJ_I/AAAAAAAACkw/ylt6gj6S1WM/s1600/sapo-surinam-mano.jpg",
   "a": "Pipa pipa"},
   {"q": "https://www.dendroiberica.com/541-medium_default/d-tinctorius-robertus-f1.jpg",
-  "a": "Dendrobates tinctorius"}
+  "a": "Dendrobates tinctorius"},
+  {"q": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Discoglossus_galganoi_Ruecken.jpg",
+  "a": "Discoglossus galganoi"},
+  {"q": "https://upload.wikimedia.org/wikipedia/commons/8/89/Alytes_obstetricans_1_MHNT_.jpg",
+  "a": "Alytes obstetricans"},
+  {"q": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Epidalea_calamita_02_by-dpc.jpg",
+  "a": "Bufo calamita"},
+  {"q": "https://upload.wikimedia.org/wikipedia/commons/5/50/Hyla_meridionalis_MHNT_Fronton.jpg",
+  "a": "Hyla meridionalis"},
+  {"q": "https://live.staticflickr.com/3357/3659679972_9edf225b3e_b.jpg",
+  "a": "Rana perezi"},
 ];
