@@ -45,22 +45,6 @@ export default function Home () {
             </button>
           </Link>
 
-          <Link to="/invertebrates">
-            <button className="menu-buttons cnidarios">
-              <div className="menu-content">
-                <img className="img-icon button-icon" alt="Icono invertebrados" src="https://img.icons8.com/ios-glyphs/30/000000/shell-.png"/>
-                <h2>INV. NO ARTRÓPODOS</h2>
-              </div>
-            </button>
-          </Link>
-
-          <button className="menu-buttons minerals" disabled>
-            <div className="menu-content">
-              <i className="button-icon fas fa-gem"></i>
-              <h2>MINERALES</h2>
-            </div>
-          </button>
-
           <Link to="/fosiles">
             <button className="menu-buttons fossils">
               <div className="menu-content">
@@ -97,11 +81,27 @@ export default function Home () {
             </button>
           </Link>
 
+          <button className="menu-buttons minerals" disabled>
+            <div className="menu-content">
+              <i className="button-icon fas fa-gem"></i>
+              <h2>MINERALES</h2>
+            </div>
+          </button>
+
           <Link to="/hola">
             <button className="menu-buttons fish">
               <div className="menu-content">
                 <i className="button-icon fas fa-fish"></i>
                 <h2>PECES</h2>
+              </div>
+            </button>
+          </Link>
+
+          <Link to="/invertebrates">
+            <button className="menu-buttons cnidarios">
+              <div className="menu-content">
+                <img className="img-icon button-icon" alt="Icono invertebrados" src="https://img.icons8.com/ios-glyphs/30/000000/shell-.png"/>
+                <h2>INV. NO ARTRÓPODOS</h2>
               </div>
             </button>
           </Link>
