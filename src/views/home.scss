@@ -40,6 +40,7 @@
   display: flex;
   justify-content: center;
   color: white;
+  -webkit-text-stroke-width: 1px;
   &:hover{
     font-size: 22px;
   }
