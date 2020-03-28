@@ -31,12 +31,15 @@ export function ShowResult ({correctAnswer, incorrectAnswer}) {
   return (
     <div className="results">
       <div className="block-results">
-        <h3>Correctas <span role="img" alt="correct">✅</span></h3>
+        <i className="fas fa-check corrects"></i>
+
+          {/* <span role="img" alt="correct">✅</span> */}
           {mapCorrect()}
       </div> 
         
       <div className="block-results">
-        <h3>Incorrectas <span role="img" alt="incorrect">❌</span></h3>
+        {/* <h3>Incorrectas <span role="img" alt="incorrect">❌</span></h3> */}
+        <i className="fas fa-times incorrects"></i>
           {mapIncorrect()}
       </div> 
     </div>

@@ -7,7 +7,9 @@ export function Results () {
         <span 
           className="idResultsPercentage" 
           id="idResultsPercentage">
-          <span role="img" alt="stats">📊 </span>Resultados %
+          {/* <i className="fas fa-chart-line"></i> 
+          <span id="idResultsPercentage"></span>          */}
+        {/* <span role="img" alt="stats">📊 </span>Resultados % */}
         </span>
       </div>
       {/* <div id="divResultsSpan"></div> */}

@@ -5,6 +5,8 @@ import { mammals } from '../data/mammals.js';
 import './aves.scss';
 import { Results } from '../components/Results';
 import { ShowResult } from '../components/ShowResult';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 let gData = [];
 let gPercentage;
@@ -19,7 +21,8 @@ export default class Aves extends React.Component {
     this.state = {
       mammalsList: mammals,
       correctAnswerArray: [],
-      incorrectAnswerArray: []
+      incorrectAnswerArray: [],
+      percentage: 0,
     }
     this.init = this.init.bind(this);
     this.clickOnAnswer1 = this.clickOnAnswer1.bind(this);
@@ -38,8 +41,6 @@ export default class Aves extends React.Component {
     this.init();
   }
   
-
-
   shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
     // While there remain elements to shuffle...
@@ -134,7 +135,8 @@ export default class Aves extends React.Component {
   
     gPercentage = (gNumberOfCorrectAnswers / gCurrentIndex) * 100.0;
     gPercentage = Math.round(gPercentage * 100) / 100;
-    document.getElementById("idResultsPercentage").innerHTML = "📊 Resultados: " + gPercentage + "%";
+    // document.getElementById("idResultsPercentage").innerHTML = 'Aciertos : ' + gPercentage + "%";
+    this.setState({percentage: gPercentage})
   }
 
   clickOnAnswer1() {
@@ -200,6 +202,14 @@ export default class Aves extends React.Component {
           </div>
         </div>
         <Results />
+        <div className="container-graph">
+          <div style={{ width: "25%", padding: "20px 20px 40px 20px" }}>
+            <CircularProgressbar
+              value={this.state.percentage} 
+              text={`${this.state.percentage}%`} 
+              />
+          </div>  
+        </div>
         <ShowResult 
             correctAnswer={this.state.correctAnswerArray} 
             incorrectAnswer={this.state.incorrectAnswerArray} />
