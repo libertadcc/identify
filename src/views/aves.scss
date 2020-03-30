@@ -34,27 +34,22 @@ body {
 .container-options {
   max-width: 1000px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-self: center;
-  justify-items: center;
 }
 
 .divAnswers {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 60px;
-  grid-column-gap: 2px;
+  grid-row-gap: 3px;
   @media all and(min-width: 600px) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 80px 80px;
     grid-column-gap: 10px;
+    grid-row-gap: 5px;
   }
 }
 
 .btnAnswer {
-  min-width: 250px;
-  max-width: 300px;
+  width: 320px;
   cursor: pointer;
   margin: 10px 0;
   font-style: oblique;

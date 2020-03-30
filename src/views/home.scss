@@ -39,8 +39,6 @@
   font-size: 18px;
   display: flex;
   justify-content: center;
-  color: white;
-  -webkit-text-stroke-width: 1px;
   &:hover{
     font-size: 22px;
   }
@@ -60,102 +58,158 @@
   box-shadow: 0 0 0 2em rgba(#a3a8a3,0);
 }
 
+.title-section {
+  display: none;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+}
+
 .birds {
   background-image: url('../images/grulla.jpg');
   background-size: cover;
   background-color: transparent;
   &:hover{
-    opacity: 0.8;
+    opacity: 0.5;
+    background: lightblue;
   }
+}
+
+.birds:hover .title-section {
+  display: block
 }
 
 .mammals {
   background-image: url('../images/suricata.jpg');
   background-size: cover;
   &:hover{
-    opacity: 0.8;
+    opacity: 0.5;
   }
+}
+
+.mammals:hover .title-section {
+  display: block
 }
 
 .plants {
   background-image: url('../images/jara.jpg');
   background-size: cover;
   &:hover{
-    opacity: 0.8;
+    opacity: 0.5;
   }
+}
+
+.plants:hover .title-section {
+  display: block
 }
 
 .arthropods {
   background-image: url('../images/lasioglossum.jpg');
   background-size: cover;
   &:hover{
-    opacity: 0.8;
+    opacity: 0.5;
   }
+}
+
+.arthropods:hover .title-section {
+  display: block
 }
 
 .cnidarios {
   background-image: url('../images/medusa.jpg');
   background-size: cover;
   &:hover{
-    opacity: 0.8;
+    opacity: 0.5;
   }
+}
+
+.cnidarios:hover .title-section {
+  display: block
 }
 
 .minerals {
   background-image: url('../images/geoda.jpg');
   background-size: cover;
   &:hover{
-    opacity: 0.8;
+    opacity: 0.5;
   }
+}
+
+.minerals:hover .title-section {
+  display: block
 }
 
 .fossils {
   background-image: url('../images/paroxides.jpg');
   background-size: cover;
   &:hover{
-    opacity: 0.8;
+    opacity: 0.5;
   }
+}
+
+.fossils:hover .title-section {
+  display: block
 }
 
 .rocks {
   background-image: url('../images/pirita.jpeg');
   background-size: cover;
   &:hover{
-    opacity: 0.9;
+    opacity: 0.5;
   }
+}
+
+.rocks:hover .title-section {
+  display: block
 }
 
 .reptiles {
   background-image: url('../images/tboba.jpg');
   background-size: cover;
   &:hover{
-    opacity: 0.8;
+    opacity: 0.5;
   }
+}
+
+.reptiles:hover .title-section {
+  display: block
 }
 
 .amphibians {
   background-image: url('../images/Mesotriton_aplestris.jpeg');
   background-size: cover;
   &:hover{
-    opacity: 0.8;
+    opacity: 0.5;
   }
+}
+
+.amphibians:hover .title-section {
+  display: block
 }
 
 .fish {
   background-image: url('../images/gupy.jpg');
   background-size: cover;
   &:hover{
-    opacity: 0.8;
+    opacity: 0.5;
   }
+}
+
+.fish:hover .title-section {
+  display: block
 }
 
 .exam {
   background-image: url('../images/butteflies.jpg');
   background-size: cover;
   &:hover{
-    opacity: 0.8;
+    opacity: 0.5;
   }
 }
+
+.exam:hover .title-section {
+  display: block
+}
+
 
 #root {
   margin: 0 auto;

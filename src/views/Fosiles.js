@@ -169,6 +169,7 @@ export default class Fosiles extends React.Component {
   render (){ 
   return (
     <React.Fragment>
+      <div id="root">
       <Header />
       <main className="main">
         <Image />
@@ -221,6 +222,7 @@ export default class Fosiles extends React.Component {
             correctAnswer={this.state.correctAnswerArray} 
             incorrectAnswer={this.state.incorrectAnswerArray} />
       </main>
+      </div>
     </React.Fragment>
   );
 }
