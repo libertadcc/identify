@@ -5,3 +5,29 @@
 .hidden {
   visibility: hidden;
 }
+
+.answer-text {
+  height: 20px;
+  font-size: 22px;
+  margin: 15px 0;
+}
+
+#answer {
+  font-style: italic;
+}
+
+.incorrect {
+  color: red;
+}
+
+.correct {
+  color: green;
+}
+
+.row-btns {
+  margin-top: 35px;
+}
+
+.btn {
+  height: 60px;
+}

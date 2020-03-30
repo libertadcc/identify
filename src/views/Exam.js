@@ -2,7 +2,10 @@ import React from 'react';
 import Header from '../components/Header';
 import { Image } from '../components/Image';
 import './exam.scss';
-import './aves.scss';
+
+
+import { Button, InputGroup, FormControl, Col, Row } from 'react-bootstrap';
+
 
 let gData = [];
 let gStackQuestions;
@@ -148,10 +151,12 @@ export default class Exam extends React.Component {
   // Respuesta incorrecta
     if (userAnswer !== selectedQuestion.a) {
       document.getElementById("conclusion").innerHTML = 'Incorrecto';
+      document.getElementById('conclusion').classList.add('incorrect');
       this.setState({isCorrect: 1});
   // Respuesta correcta   
     } else if (userAnswer === selectedQuestion.a) {
       document.getElementById("conclusion").innerHTML = '¡Correcto!';
+      document.getElementById('conclusion').classList.add('correct');
       this.setState({isCorrect: 0});
     }
   }
@@ -212,14 +217,44 @@ export default class Exam extends React.Component {
       alt="Foto de especie"
       id="imgQuestion"
       className="imgQuestion"/>
-      <form>
-      <input type="text" id="input-answer" onChange={this.userAnswer}/>
-      <p id="answer" className="answer-specie hidden">Respuesta: </p>
-      <p id="conclusion"></p>
-      <button className="btnAnswer" onClick={this.checkAnswer}>Check answer</button>
+
+      <Row>
+        <Col sm="3"></Col>
+        <Col sm="6">
+          <InputGroup col="2" className="sm-2">
+            <FormControl
+              type="text"
+              placeholder="Nombre de la especie"
+              id="input-answer"
+              onChange={this.userAnswer}
+            />
+          </InputGroup>
+        </Col>
+        <Col sm="3"></Col>
+      </Row>
+
+      {/* <Col sm="2">
+        <input type="text" id="input-answer" onChange={this.userAnswer}/>
+      </Col> */}
+
+      <p id="answer" className="answer-specie hidden answer-text"></p>
+      <p id="conclusion" className="answer-text"></p>
+
+      {/* <button className="btnAnswer" onClick={this.checkAnswer}>Check answer</button>
       <button className="btnAnswer" onClick={this.showAnswer}>Show answer</button>
-      <button className="btnAnswer" onClick={this.nextQuestion}>next Question</button>
-      </form>
+      <button className="btnAnswer" onClick={this.nextQuestion}>next Question</button> */}
+
+      <Row className="row-btns">
+        <Col sm="4">
+          <Button variant="outline-info" className="btn" onClick={this.checkAnswer}>Comprobar solución</Button>
+        </Col>
+        <Col sm="4">
+          <Button variant="outline-info" className="btn" onClick={this.showAnswer}>Mostrar solución</Button>
+        </Col>
+        <Col sm="4">
+          <Button variant="outline-info" className="btn" onClick={this.nextQuestion}>Siguiente pregunta</Button>
+        </Col>
+      </Row>
     </React.Fragment>
   );
 }

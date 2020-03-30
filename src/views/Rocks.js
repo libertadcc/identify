@@ -5,6 +5,10 @@ import { rocks } from '../data/rocks.js';
 import './aves.scss';
 import { Results } from '../components/Results';
 import { ShowResult } from '../components/ShowResult';
+
+import { Button } from 'react-bootstrap';
+
+
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -136,7 +140,6 @@ export default class Aves extends React.Component {
   
     gPercentage = (gNumberOfCorrectAnswers / gCurrentIndex) * 100.0;
     gPercentage = Math.round(gPercentage * 100) / 100;
-    // document.getElementById("idResultsPercentage").innerHTML = "📊 Resultados: " + gPercentage + "%";
     this.setState({ percentage: gPercentage })
   }
 
@@ -172,34 +175,38 @@ export default class Aves extends React.Component {
         <Image />
         <div className="container-options">
           <div id="idAnswers" className="divGeneral divAnswers">
-            <button 
+            <Button 
+              variant="outline-info" 
               id="answer1" 
               className="btnAnswer" 
               title="Key 1"
               onClick={this.clickOnAnswer1}>
               1
-            </button>
-            <button 
+            </Button>
+            <Button 
               id="answer2" 
+              variant="outline-info"
               className="btnAnswer" 
               title="Key 2" 
               onClick={this.clickOnAnswer2}>
               2
-            </button>
-            <button 
+            </Button>
+            <Button 
               id="answer3" 
+              variant="outline-info"
               className="btnAnswer" 
               title="Key 3"
               onClick={this.clickOnAnswer3} >
               3
-            </button>
-            <button 
+            </Button>
+            <Button 
               id="answer4" 
+              variant="outline-info"
               className="btnAnswer" 
               title="Key 4" 
               onClick={this.clickOnAnswer4}>
               4
-            </button>
+            </Button>
           </div>
         </div>
         <Results />

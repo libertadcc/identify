@@ -53,20 +53,12 @@ body {
 }
 
 .btnAnswer {
-  justify-self: center;
-  align-self: stretch;
   min-width: 250px;
   max-width: 300px;
   cursor: pointer;
-  border-radius: 50px;
-  border: none;
-  color:white;
-  background-color: #7B91BA;
-  font-size: x-large; 
   margin: 10px 0;
   font-style: oblique;
   font-size: 19px;
-  box-shadow: 3px 5px 5px #000;
   @media all and (min-width: 360px) {
     font-size: 23px
   }
@@ -155,9 +147,8 @@ body {
   //color: white;
   border: none;
 }
+
 // Gráfico circulars
-
-
 .container-graph{
   display: flex;
   justify-content: center;
