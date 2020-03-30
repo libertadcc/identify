@@ -54,7 +54,7 @@ export default function Home () {
             </button>
           </Link>
 
-          <Link to="/hola">
+          <Link to="/fishes">
             <button className="menu-buttons fish">
               <div className="menu-content">
                 {/* <i className="button-icon fas fa-fish"></i> */}
@@ -102,6 +102,15 @@ export default function Home () {
               <div className="menu-content">
               {/* <i className="button-icon fas fa-skull"></i> */}
                 <h2>FÓSILES</h2>
+              </div>
+            </button>
+          </Link>
+
+          <Link to="/exam">
+            <button className="menu-buttons">
+              <div className="menu-content">
+              {/* <i className="button-icon fas fa-skull"></i> */}
+                <h2>EXAMEN</h2>
               </div>
             </button>
           </Link>

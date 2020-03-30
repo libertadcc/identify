@@ -15,7 +15,7 @@ let gCurrentIndex = 0;
 let gCorrectAnswerIndex = 0;
 let gNumberOfCorrectAnswers = 0;
 
-export default class Aves extends React.Component {
+export default class Arthropods extends React.Component {
   constructor (props) {
     super(props);
     this.state = {

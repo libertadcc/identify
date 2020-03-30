@@ -11,6 +11,7 @@ import Mammals from './views/Mammals';
 import Plantas from './views/Plantas';
 import Invertebrados from './views/Invertebrados';
 import Peces from './views/Peces';
+import Exam from './views/Exam';
 import { Route, Switch } from 'react-router-dom';
 import { ShowResult } from './components/ShowResult';
 
@@ -28,7 +29,8 @@ export default function App() {
         <Route path="/amphibians" component={Amphibians} />
         <Route path="/reptiles" component={Reptiles} />
         <Route path="/rocks" component={Rocks} />
-        <Route path="/hola" component={Peces} />
+        <Route path="/fishes" component={Peces} />
+        <Route path="/exam" component={Exam} />
         <Route path="/results" component={ShowResult} />
       </Switch>
     </div>

@@ -92,7 +92,7 @@ export default class Aves extends React.Component {
   }
 
   createSpanResult(text, isCorrect) {
-    var spanAnswer = document.createElement('span')
+    var spanAnswer = document.createElement('span');
     spanAnswer.innerHTML = text;
     spanAnswer.setAttribute('className', isCorrect ? "correctAnswer" : "incorrectAnswer");
     
@@ -136,7 +136,6 @@ export default class Aves extends React.Component {
   
     gPercentage = (gNumberOfCorrectAnswers / gCurrentIndex) * 100.0;
     gPercentage = Math.round(gPercentage * 100) / 100;
-    // document.getElementById("idResultsPercentage").innerHTML = "📊 Resultados: " + gPercentage + "%";
     this.setState({percentage: gPercentage})
   }
 
