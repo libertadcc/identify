@@ -43,6 +43,7 @@ export default class Exam extends React.Component {
     this.nextQuestion = this.nextQuestion.bind(this);
     this.getNextCandidate = this.getNextCandidate.bind(this);
     this.createQuestion = this.createQuestion.bind(this);
+    this._handleKeyDown = this._handleKeyDown.bind(this);
   }
 
 
@@ -146,11 +147,14 @@ export default class Exam extends React.Component {
     this.checkAnswer();
     let lastIndex = this.state.count;
 
+    const answerDiv = document.querySelector('.answer-specie').classList;
     // Guardar respuestas correctas o incorrectas en el array
     if(userAnswer === selectedQuestion.a) {
       this.state.correctAnswers.push(selectedQuestion.a);
     } else if(userAnswer !== selectedQuestion.a) {
       this.state.incorrectAnswers.push(selectedQuestion.a);
+      answerDiv.remove('hidden')
+      answerDiv.add('shown')
     }
 
     setTimeout(function() {
@@ -172,6 +176,12 @@ export default class Exam extends React.Component {
     }, 1000);
   }
 
+  _handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      this.nextQuestion();
+    }
+  }
+
   render (){ 
   return (
     <React.Fragment>
@@ -190,6 +200,7 @@ export default class Exam extends React.Component {
               placeholder="Nombre de la especie"
               id="input-answer"
               onChange={this.userAnswer}
+              onKeyDown={this._handleKeyDown}
             />
           </InputGroup>
         </Col>
@@ -215,7 +226,8 @@ export default class Exam extends React.Component {
           <Button variant="outline-info" className="btn" onClick={this.showAnswer}>Mostrar solución</Button>
         </Col>
         <Col sm="4">
-          <Button variant="outline-info" className="btn" onClick={this.nextQuestion}>Siguiente pregunta</Button>
+          <Button variant="outline-info" className="btn" 
+          onClick={this.nextQuestion} >Siguiente pregunta</Button>
         </Col>
       </Row>
     </React.Fragment>
