@@ -109,7 +109,7 @@ export const plants = [
   "a": "Prunus spinosa"},
   {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR26hn09j7mjQHf5w-B-1Dck_VHZvG-ubzfB_WkkF3c5gK6CU_W",
   "a": "Punica granatum"},
-  {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQKAWuuKZy3-By9Oa8qTFFZ8D9eYi3EsTizDnvxHW42ZSAKWhT6",
+  {"q": "https://live.staticflickr.com/4247/34851280446_60021987a4_b.jpg",
   "a": "Pyrus communis"},
   {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTlkHK5Nh6vZFmfuze1BM2M8GuZ4TftAavMYFjihpPnkDZK_BRz",
   "a": "Pyrus spinosa"},
