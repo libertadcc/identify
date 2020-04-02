@@ -2,7 +2,7 @@ export const birds =  [
 		{ "q": "https://upload.wikimedia.org/wikipedia/commons/8/84/Rose-ringed_Parakeet_Psittacula_krameri_male_by_Dr._Raju_Kasambe_DSCN8937_%283%29.jpg",
 			"a": "Psittacula krameri"},
 		{ "q": "https://www.mascotarios.org/wp-content/uploads/2011/10/Cotorra-argentina-1.jpg" ,
-			"a" : "Mylopsitta monachus"},
+			"a" : "Myiopsitta monachus"},
 		{ "q": "https://upload.wikimedia.org/wikipedia/commons/2/28/Psittacus_erithacus_-perching_on_tray-8d.jpg",
 			"a": "Psittacus erithacus" },
 		{ "q": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_UiU_zxWaU7N9FHTT1Sly6O-QzzjwLS-MVrU4f1yiNcRAhsE2zA&s",
