@@ -20,7 +20,8 @@ export default function App() {
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={GameModes} />
+        <Route path="/home" component={Home} />
         <Route path="/aves" component={Aves} />
         <Route path="/fosiles" component={Fosiles} />
         <Route path="/artropodos" component={Arthropods} />

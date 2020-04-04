@@ -1,5 +1,8 @@
 import React from 'react';
 import Header from '../components/Header';
+import { Link } from 'react-router-dom';
+import './modes.scss';
+
 import './exam.scss';
 import { Button, InputGroup, FormControl, Col, Row } from 'react-bootstrap';
 
@@ -27,7 +30,25 @@ export default class GameModes extends React.Component {
   return (
     <React.Fragment>
       <Header />
-      
+      <div className="container-ppal-menu">
+        <div className="container-buttons">
+          <Link to="/home">
+            <button className="menu-buttons">
+              <div className="menu-content">
+                <h2>EJERCICIOS</h2>
+              </div>
+            </button>
+          </Link>
+
+          <Link to="/exam">
+            <button className="menu-buttons">
+              <div className="menu-content">
+                <h2>EXAMEN</h2>
+              </div>
+            </button>
+          </Link>
+        </div>
+      </div>
     </React.Fragment>
   );
 }
