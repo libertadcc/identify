@@ -95,13 +95,6 @@ export default function Home () {
             </button>
           </Link>
 
-          <Link to="/exam">
-            <button className="menu-buttons exam">
-              <div className="menu-content">
-                <h2 className="title-section">EXAMEN</h2>
-              </div>
-            </button>
-          </Link>
         </div>
       </div>
     </React.Fragment>

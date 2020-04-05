@@ -30,20 +30,20 @@ export default class GameModes extends React.Component {
   return (
     <React.Fragment>
       <Header />
-      <div className="container-ppal-menu">
-        <div className="container-buttons">
+      <div className="container-ppal-mode">
+        <div className="container-buttons-mode">
           <Link to="/home">
-            <button className="menu-buttons">
-              <div className="menu-content">
-                <h2>EJERCICIOS</h2>
+            <button className="mode-buttons">
+              <div className="mode-content">
+                <h2 className="mode-title">EJERCICIOS</h2>
               </div>
             </button>
           </Link>
 
           <Link to="/exam">
-            <button className="menu-buttons">
-              <div className="menu-content">
-                <h2>EXAMEN</h2>
+            <button className="mode-buttons">
+              <div className="mode-content">
+                <h2 className="mode-title">EXAMEN</h2>
               </div>
             </button>
           </Link>

@@ -13,7 +13,11 @@
   grid-template-rows: auto;
   grid-template-columns: 1fr;
   grid-gap: 15px;
-  @media all and (min-width:660px) {
+  @media all and (min-width: 770px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+  }
+  @media all and (min-width: 950px) {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 25px;
   }
@@ -70,7 +74,7 @@
   background-color: transparent;
   &:hover{
     opacity: 0.5;
-    background: #17a2b8;
+    background: #646d6e;
   }
 }
 
@@ -83,7 +87,7 @@
   background-size: cover;
   &:hover{
     opacity: 0.5;
-    background: #17a2b8;
+    background: #7b5b41;
   }
 }
 
@@ -96,6 +100,7 @@
   background-size: cover;
   &:hover{
     opacity: 0.5;
+    background: #4b9238;
   }
 }
 

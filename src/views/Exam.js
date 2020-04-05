@@ -190,7 +190,6 @@ export default class Exam extends React.Component {
       alt="Foto de especie"
       id="imgQuestion"
       className="imgQuestion"/>
-
       <Row>
         <Col sm="3"></Col>
         <Col sm="6">
@@ -207,17 +206,9 @@ export default class Exam extends React.Component {
         <Col sm="3"></Col>
       </Row>
 
-      {/* <Col sm="2">
-        <input type="text" id="input-answer" onChange={this.userAnswer}/>
-      </Col> */}
-
       <p id="answer" className="answer-specie hidden answer-text"></p>
       <p id="conclusion" className="answer-text"></p>
-
-      {/* <button className="btnAnswer" onClick={this.checkAnswer}>Check answer</button>
-      <button className="btnAnswer" onClick={this.showAnswer}>Show answer</button>
-      <button className="btnAnswer" onClick={this.nextQuestion}>next Question</button> */}
-
+      
       <Row className="row-btns">
         <Col sm="4">
           <Button variant="outline-info" className="btn" onClick={this.checkAnswer}>Comprobar solución</Button>
