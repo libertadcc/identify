@@ -13,6 +13,7 @@ import Invertebrados from './views/Invertebrados';
 import Peces from './views/Peces';
 import Exam from './views/Exam';
 import GameModes from './views/GameModes';
+import Custom from './views/Custom';
 import { Route, Switch } from 'react-router-dom';
 import { ShowResult } from './components/ShowResult';
 
@@ -35,6 +36,7 @@ export default function App() {
         <Route path="/exam" component={Exam} />
         <Route path="/game-mode" component={GameModes} />
         <Route path="/results" component={ShowResult} />
+        <Route path="/custom" component={Custom} />
       </Switch>
     </div>
   );

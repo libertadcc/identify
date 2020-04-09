@@ -23,13 +23,11 @@ let selectedQuestion = '';
 let listCandidates = [];
 let correctAnswer;
 
-let data = [];
-
 export default class Exam extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      data: data.concat(arthropods).concat(amphibians).concat(birds).concat(fishes).concat(fossils).concat(invert).concat(mammals).concat(plants).concat(reptiles).concat(rocks),
+      data: [],
       count: 1,
       isCorrect: 2,
       hideAnswer: true,
@@ -37,6 +35,7 @@ export default class Exam extends React.Component {
       incorrectAnswers: [],
     }
     this.init = this.init.bind(this);
+    this.getSelectedTopics = this.getSelectedTopics.bind(this);
     this.userAnswer = this.userAnswer.bind(this);
     this.checkAnswer = this.checkAnswer.bind(this);
     this.showAnswer = this.showAnswer.bind(this);
@@ -46,23 +45,63 @@ export default class Exam extends React.Component {
     this._handleKeyDown = this._handleKeyDown.bind(this);
   }
 
+  getSelectedTopics () {
+    const selected = this.props.location.state.selected;
+    selected.map((topic) => {
+      if(topic === 'birds' ) {
+        this.setState(prevState =>({data: prevState.data.concat(birds)}));
+      }
+      if (topic === 'mammals'){
+        this.setState(prevState => ({data: prevState.data.concat(mammals)}));
+      }
+      if (topic === 'plants'){
+        this.setState(prevState => ({data: prevState.data.concat(plants)}));
+      }
+      if (topic === 'rocks'){
+        this.setState(prevState => ({data: prevState.data.concat(rocks)}));
+      }
+      if (topic === 'reptils'){
+        this.setState(prevState => ({data: prevState.data.concat(reptiles)}));
+      }
+      if (topic === 'fishes'){
+        this.setState(prevState => ({data: prevState.data.concat(fishes)}));
+      }
+      if (topic === 'amphibians'){
+        this.setState(prevState => ({data: prevState.data.concat(amphibians)}));
+      }
+      if (topic === 'arthropods'){
+        this.setState(prevState => ({data: prevState.data.concat(arthropods)}));
+      }
+      if (topic === 'invert'){
+        this.setState(prevState => ({data: prevState.data.concat(invert)}));
+      }
+      if (topic === 'fossils'){
+        this.setState(prevState => ({data: prevState.data.concat(fossils)}));
+      }
+    });
+  }
 
   init() {
     gData = this.state.data;
     gStackQuestions = this.shuffle(gData);
-    this.createQuestion();    
+    setTimeout(() => {
+      this.createQuestion();    
+    }, 0);
   }
   
   componentDidMount() {
-    this.init();
-    const answerDiv = document.querySelector('.answer-specie').classList;
-    if(this.state.hideAnswer === false) {
-      answerDiv.remove('hidden')
-      answerDiv.add('shown')
-    } else if (this.state.hideAnswer === true) {
-      answerDiv.add('hidden')
-      answerDiv.remove('shown')
-    }
+    this.getSelectedTopics();
+    setTimeout(() => {
+      this.init();
+      const answerDiv = document.querySelector('.answer-specie').classList;
+      if(this.state.hideAnswer === false) {
+        answerDiv.remove('hidden')
+        answerDiv.add('shown')
+      } else if (this.state.hideAnswer === true) {
+        answerDiv.add('hidden')
+        answerDiv.remove('shown')
+      }
+    }, 0);
   }
 
   shuffle(array) {

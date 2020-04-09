@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import { Link } from 'react-router-dom';
 import './modes.scss';
 
-import './exam.scss';
+// import './exam.scss';
 import { Button, InputGroup, FormControl, Col, Row } from 'react-bootstrap';
 
 import { amphibians } from '../data/amphibians';
@@ -40,7 +40,7 @@ export default class GameModes extends React.Component {
             </button>
           </Link>
 
-          <Link to="/exam">
+          <Link to="/custom">
             <button className="mode-buttons">
               <div className="mode-content">
                 <h2 className="mode-title">EXAMEN</h2>
