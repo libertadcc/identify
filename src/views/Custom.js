@@ -95,15 +95,10 @@ export default class Custom extends React.Component {
               pathname: "/exam",
               state: { selected: this.state.selected }
             }}>
-            <Button className="button-custom" variant="outline-info">
+            <Button className="button-custom" variant="info" disabled={this.state.selected.length === 0}>
               Empezar examen</Button>
           </Link>
-
-          {/* Como pasar esto por props!?!?!?!?!??! */}
-          <Route
-            path="/exam"
-            render={() => <Exam />}
-          />
+          <Route path="/exam" render={() => <Exam />}/>
       </Form>
       </div>
     </React.Fragment>

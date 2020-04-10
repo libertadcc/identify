@@ -38,17 +38,16 @@
   }
 }
 
-
 .imgQuestion {
-  border-radius: 42px;
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   max-width: 99%;
-  height: 90px;
+  height: 400px;
   margin: 5px auto;
   margin-bottom: 30px;
   @media all and (min-width: 660px) {
     max-width: 550px;
-    height: 500px;
+    height: 400px;
   }
 }
