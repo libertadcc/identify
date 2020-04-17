@@ -2,7 +2,10 @@ import React from 'react';
 import Header from '../components/Header';
 import './exam.scss';
 import { Button, InputGroup, FormControl, Col, Row } from 'react-bootstrap';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
+import { ShowResult } from '../components/ShowResult';
 import { amphibians } from '../data/amphibians';
 import { arthropods } from '../data/arthropods';
 import { birds } from '../data/birds';
@@ -33,6 +36,8 @@ export default class Exam extends React.Component {
       hideAnswer: true,
       correctAnswers: [],
       incorrectAnswers: [],
+      finishedTest: false,
+      percentage: 0,
     }
     this.init = this.init.bind(this);
     this.getSelectedTopics = this.getSelectedTopics.bind(this);
@@ -43,6 +48,8 @@ export default class Exam extends React.Component {
     this.getNextCandidate = this.getNextCandidate.bind(this);
     this.createQuestion = this.createQuestion.bind(this);
     this._handleKeyDown = this._handleKeyDown.bind(this);
+    this.showResultExam = this.showResultExam.bind(this);
+    this.getPercentage = this.getPercentage.bind(this);
   }
 
   getSelectedTopics () {
@@ -184,6 +191,7 @@ export default class Exam extends React.Component {
       isCorrect: 2}
     );
     this.checkAnswer();
+
     let lastIndex = this.state.count;
 
     const answerDiv = document.querySelector('.answer-specie').classList;
@@ -195,7 +203,7 @@ export default class Exam extends React.Component {
       answerDiv.remove('hidden')
       answerDiv.add('shown')
     }
-
+    this.getPercentage();
     setTimeout(function() {
       // Reseta el input
       document.getElementById("input-answer").value = "";
@@ -219,6 +227,16 @@ export default class Exam extends React.Component {
     if (e.key === 'Enter') {
       this.nextQuestion();
     }
+  }
+
+  showResultExam (){
+    console.log('correct', this.state.correctAnswers);
+    console.log('incorrect', this.state.incorrectAnswers);
+  }
+
+  getPercentage() {
+    let gPercentage = (this.state.correctAnswers.length / this.state.count) * 100.0;
+    this.setState({percentage: gPercentage});
   }
 
   render (){ 
@@ -259,6 +277,34 @@ export default class Exam extends React.Component {
           <Button variant="outline-info" className="btn" 
           onClick={this.nextQuestion} >Siguiente pregunta</Button>
         </Col>
+      </Row>
+
+      <Row>
+        <Col sm="2"></Col>
+        <Col sm="8">
+          <Button 
+          onClick={this.showResultExam}>
+            Finalizar test</Button>
+        </Col>
+        <Col sm="2"></Col>
+      </Row>
+      <Row>
+        <Col sm="2"></Col>
+          <Col sm="8">
+            <h3>Resultados del examen</h3>
+            <div className="container-graph">
+              <div style={{ width: "40%", padding: "20px 20px 40px 20px" }}>
+                <CircularProgressbar
+                  value={this.state.percentage} 
+                  text={`${this.state.percentage}%`} 
+                  />
+              </div>  
+            </div>
+            <ShowResult 
+              correctAnswer={this.state.correctAnswers} 
+              incorrectAnswer={this.state.incorrectAnswers} />
+          </Col>
+        <Col sm="2"></Col>
       </Row>
     </React.Fragment>
   );

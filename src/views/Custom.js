@@ -6,18 +6,7 @@ import './custom.scss';
 import Exam from './Exam';
 
 import './exam.scss';
-import { Button, InputGroup, FormControl, Col, Row, Form } from 'react-bootstrap';
-
-import { amphibians } from '../data/amphibians';
-import { arthropods } from '../data/arthropods';
-import { birds } from '../data/birds';
-import { fishes } from '../data/fishes';
-import { fossils } from '../data/fossils';
-import { invert } from '../data/invert';
-import { mammals } from '../data/mammals';
-import { plants } from '../data/plants';
-import { reptiles } from '../data/reptiles';
-import { rocks } from '../data/rocks';
+import { Button, Form } from 'react-bootstrap';
 
 export default class Custom extends React.Component {
   constructor (props) {
