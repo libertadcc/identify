@@ -4,6 +4,7 @@ import './exam.scss';
 import { Button, InputGroup, FormControl, Col, Row } from 'react-bootstrap';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { Link } from 'react-router-dom';
 
 import { ShowResult } from '../components/ShowResult';
 import { amphibians } from '../data/amphibians';
@@ -55,36 +56,16 @@ export default class Exam extends React.Component {
   getSelectedTopics () {
     const selected = this.props.location.state.selected;
     selected.map((topic) => {
-      if(topic === 'birds' ) {
-        this.setState(prevState =>({data: prevState.data.concat(birds)}));
-      }
-      if (topic === 'mammals'){
-        this.setState(prevState => ({data: prevState.data.concat(mammals)}));
-      }
-      if (topic === 'plants'){
-        this.setState(prevState => ({data: prevState.data.concat(plants)}));
-      }
-      if (topic === 'rocks'){
-        this.setState(prevState => ({data: prevState.data.concat(rocks)}));
-      }
-      if (topic === 'reptils'){
-        this.setState(prevState => ({data: prevState.data.concat(reptiles)}));
-      }
-      if (topic === 'fishes'){
-        this.setState(prevState => ({data: prevState.data.concat(fishes)}));
-      }
-      if (topic === 'amphibians'){
-        this.setState(prevState => ({data: prevState.data.concat(amphibians)}));
-      }
-      if (topic === 'arthropods'){
-        this.setState(prevState => ({data: prevState.data.concat(arthropods)}));
-      }
-      if (topic === 'invert'){
-        this.setState(prevState => ({data: prevState.data.concat(invert)}));
-      }
-      if (topic === 'fossils'){
-        this.setState(prevState => ({data: prevState.data.concat(fossils)}));
-      }
+      if(topic === 'birds' ) this.setState(prevState =>({data: prevState.data.concat(birds)}));
+      if (topic === 'mammals') this.setState(prevState => ({data: prevState.data.concat(mammals)}));
+      if (topic === 'plants') this.setState(prevState => ({data: prevState.data.concat(plants)}));
+      if (topic === 'rocks') this.setState(prevState => ({data: prevState.data.concat(rocks)}));
+      if (topic === 'reptils') this.setState(prevState => ({data: prevState.data.concat(reptiles)}));
+      if (topic === 'fishes') this.setState(prevState => ({data: prevState.data.concat(fishes)}));
+      if (topic === 'amphibians') this.setState(prevState => ({data: prevState.data.concat(amphibians)}));
+      if (topic === 'arthropods') this.setState(prevState => ({data: prevState.data.concat(arthropods)}));
+      if (topic === 'invert') this.setState(prevState => ({data: prevState.data.concat(invert)}));
+      if (topic === 'fossils') this.setState(prevState => ({data: prevState.data.concat(fossils)}));
     });
   }
 
@@ -196,6 +177,9 @@ export default class Exam extends React.Component {
 
     const answerDiv = document.querySelector('.answer-specie').classList;
     // Guardar respuestas correctas o incorrectas en el array
+
+    /* ¡¡¡¡¡¡¡¡¡¡ Comprobar con un find o un filter que no está en el array y si está quitarlo, es decir, 
+    QUITAR DUPLICIDADES DE LOS ARRAYS DE RESPUESTA! */
     if(userAnswer === selectedQuestion.a) {
       this.state.correctAnswers.push(selectedQuestion.a);
     } else if(userAnswer !== selectedQuestion.a) {
@@ -230,12 +214,16 @@ export default class Exam extends React.Component {
   }
 
   showResultExam (){
-    console.log('correct', this.state.correctAnswers);
-    console.log('incorrect', this.state.incorrectAnswers);
+    this.setState({finishedTest: true});
+    setTimeout(() => {
+      var elmnt = document.getElementById("results");
+      elmnt.scrollIntoView();
+    }, 20);
   }
 
   getPercentage() {
     let gPercentage = (this.state.correctAnswers.length / this.state.count) * 100.0;
+    gPercentage = Math.round(gPercentage * 100) / 100;
     this.setState({percentage: gPercentage});
   }
 
@@ -268,17 +256,16 @@ export default class Exam extends React.Component {
       
       <Row className="row-btns">
         <Col sm="4">
-          <Button variant="outline-info" className="btn" onClick={this.checkAnswer}>Comprobar solución</Button>
+          <Button variant="outline-info" className="btn" onClick={this.checkAnswer} disabled={this.state.finishedTest}>Comprobar solución</Button>
         </Col>
         <Col sm="4">
-          <Button variant="outline-info" className="btn" onClick={this.showAnswer}>Mostrar solución</Button>
+          <Button variant="outline-info" className="btn" onClick={this.showAnswer} disabled={this.state.finishedTest}>Mostrar solución</Button>
         </Col>
         <Col sm="4">
           <Button variant="outline-info" className="btn" 
-          onClick={this.nextQuestion} >Siguiente pregunta</Button>
+          onClick={this.nextQuestion} disabled={this.state.finishedTest}>Siguiente pregunta</Button>
         </Col>
       </Row>
-
       <Row>
         <Col sm="2"></Col>
         <Col sm="8">
@@ -288,24 +275,33 @@ export default class Exam extends React.Component {
         </Col>
         <Col sm="2"></Col>
       </Row>
-      <Row>
-        <Col sm="2"></Col>
-          <Col sm="8">
-            <h3>Resultados del examen</h3>
-            <div className="container-graph">
-              <div style={{ width: "40%", padding: "20px 20px 40px 20px" }}>
-                <CircularProgressbar
-                  value={this.state.percentage} 
-                  text={`${this.state.percentage}%`} 
-                  />
-              </div>  
-            </div>
-            <ShowResult 
-              correctAnswer={this.state.correctAnswers} 
-              incorrectAnswer={this.state.incorrectAnswers} />
-          </Col>
-        <Col sm="2"></Col>
-      </Row>
+      {this.state.finishedTest ? 
+        <React.Fragment>
+          <Row>
+          <Col sm="2"></Col>
+            <Col sm="8">
+              <br />
+              <h3 id="results">Resultados del examen</h3>
+              <div className="container-graph">
+                <div style={{ width: "40%", padding: "20px 20px 40px 20px" }}>
+                  <CircularProgressbar
+                    value={this.state.percentage} 
+                    text={`${this.state.percentage}%`} 
+                    />
+                </div>  
+              </div>
+              <ShowResult 
+                correctAnswer={this.state.correctAnswers} 
+                incorrectAnswer={this.state.incorrectAnswers} />
+            </Col>
+          <Col sm="2"></Col>
+          </Row>
+          <Link to="/">
+            <Button>Volver a inicio</Button>
+          </Link>
+        </React.Fragment>
+        : ''
+      }
     </React.Fragment>
   );
 }

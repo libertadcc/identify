@@ -29,8 +29,6 @@ export default class Custom extends React.Component {
         this.state.selected = updateArray,
       )
     }
-
-    console.log(this.state.selected);
   };
 
   render (){ 

@@ -105,8 +105,6 @@ export default class Aves extends React.Component {
         this.state.incorrectAnswerArray = this.state.incorrectAnswerArray.concat(text)
       )
     }
-    console.log('correct', this.state.correctAnswerArray);
-    console.log('incorrect', this.state.incorrectAnswerArray)   
   }
 
   getAnswer (clickedButton, clickedBtn) {

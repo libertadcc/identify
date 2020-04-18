@@ -431,7 +431,7 @@ export const plants = [
   "a": "Pinus radiata"},
   {"q": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Pinus_sylvestris_conos_masculinos.jpg/276px-Pinus_sylvestris_conos_masculinos.jpg",
   "a": "Pinus sylvestris"},
-  {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTGQF7J6Uqzk-YjAxCH9Gz1KgPytLlm-L1i_mEU8cx7axcavHAs",
+  {"q": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Pinus_uncinata_%2815265252158%29.jpg",
   "a": "Pinus uncinata"},
   {"q": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQWGPudTN3NwE-gkay7tTwFuakKwycT2ddxfWZ_HootggNYKdbp",
   "a": "Taxus baccata"},

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import './header.scss';
-import { Navbar, Dropdown, FormControl, Col, Row } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 
 function Header () {
   return (

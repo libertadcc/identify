@@ -33,7 +33,7 @@ export const mammals = [
   "a": "Capra aegagrus"},
   {"q": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/PikiWiki_Israel_38769_Male_Ibex.jpg/1200px-PikiWiki_Israel_38769_Male_Ibex.jpg",
   "a": "Capra ibex"},
-  {"q": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Capra_p_vic_female_Laguna.jpg/250px-Capra_p_vic_female_Laguna.jpg",
+  {"q": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Capra_pyrenaica%2C_La_Pedriza%2C_Madrid%2C_Espa%C3%B1a%2C_2016_09.JPG",
   "a": "Capra pyrenaica"},
   {"q": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Capreolus_capreolus_2_Jojo.jpg",
   "a": "Capreolus capreolus"},
