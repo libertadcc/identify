@@ -14,14 +14,18 @@ import Peces from './views/Peces';
 import Exam from './views/Exam';
 import GameModes from './views/GameModes';
 import Custom from './views/Custom';
+import Login from './views/LogIn';
+import Signup from './views/SignUp';
+
 import { Route, Switch } from 'react-router-dom';
-import { ShowResult } from './components/ShowResult';
 
 export default function App() {
   return (
     <div>
       <Switch>
         <Route exact path="/" component={GameModes} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
         <Route path="/home" component={Home} />
         <Route path="/aves" component={Aves} />
         <Route path="/fosiles" component={Fosiles} />
@@ -35,7 +39,6 @@ export default function App() {
         <Route path="/fishes" component={Peces} />
         <Route path="/exam" component={Exam} />
         <Route path="/game-mode" component={GameModes} />
-        <Route path="/results" component={ShowResult} />
         <Route path="/custom" component={Custom} />
       </Switch>
     </div>

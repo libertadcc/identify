@@ -40,6 +40,7 @@ export default class Exam extends React.Component {
       finishedTest: false,
       percentage: 0,
     }
+    this.checkUserLogged = this.checkUserLogged.bind(this);
     this.init = this.init.bind(this);
     this.getSelectedTopics = this.getSelectedTopics.bind(this);
     this.userAnswer = this.userAnswer.bind(this);
@@ -77,7 +78,14 @@ export default class Exam extends React.Component {
     }, 0);
   }
   
+  checkUserLogged() {
+    if (sessionStorage.getItem('userToken') === null){
+      this.props.history.push('/login')
+    }
+  }
+
   componentDidMount() {
+    this.checkUserLogged();
     this.getSelectedTopics();
     setTimeout(() => {
       this.init();

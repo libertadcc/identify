@@ -1,0 +1,61 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.hidden {
+  visibility: 0;
+}
+
+.shown {
+  visibility: initial;
+}
+
+.container-login {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-title {
+  // color: #17a2b8;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0;
+  label {
+    text-align: initial;
+    padding: 10px 0;
+    margin: 0;
+  }
+  // ::placeholder{
+  //   font-size: 12px;
+  // }
+}
+
+.button-signin {
+  color: white;
+  background-color: #17a2b8;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  &:hover {
+    background-color: #679BA8;
+  }
+}
+
+.error-message {
+  color: red;
+  font-size: 18px;
+}
+
+.link-signup {
+  color: grey !important;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline !important;
+  }
+}

@@ -15,6 +15,13 @@ export default class Custom extends React.Component {
       selected: [],
     }
     this.onChangeOption = this.onChangeOption.bind(this);
+    this.checkUserLogged = this.checkUserLogged.bind(this);
+  }
+
+  checkUserLogged() {
+    if (sessionStorage.getItem('userToken') === null){
+      this.props.history.push('/login')
+    }
   }
 
   onChangeOption(event){
@@ -30,6 +37,10 @@ export default class Custom extends React.Component {
       )
     }
   };
+
+  componentDidMount() {
+    this.checkUserLogged();
+  }
 
   render (){ 
   return (

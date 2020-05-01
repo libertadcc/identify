@@ -9,14 +9,16 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .title {
   // font-family: 'Bowlby One SC', cursive;
-   font-family: 'Viga', sans-serif;
-   //color: #679BA8;
-   color: #17a2b8;
-   font-size: 50px;
-   margin: 15px 0;
- }
+  font-family: 'Viga', sans-serif;
+  //color: #679BA8;
+  color: #17a2b8;
+  font-size: 50px;
+  margin: 15px 0;
+}
+
 .header .fa-arrow-left {
   color: #679BA8;
   transform: scale(2);

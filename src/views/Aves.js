@@ -34,6 +34,7 @@ export default class Aves extends React.Component {
     this.clickOnAnswer3 = this.clickOnAnswer3.bind(this);
     this.clickOnAnswer4 = this.clickOnAnswer4.bind(this);
     this.getAnswer = this.getAnswer.bind(this);
+    this.checkUserLogged = this.checkUserLogged.bind(this);
   }
 
   init() {
@@ -41,8 +42,15 @@ export default class Aves extends React.Component {
     gStackQuestions = this.shuffle(gData);
     this.createQuestion();    
   }
+
+  checkUserLogged() {
+    if (sessionStorage.getItem('userToken') === null){
+      this.props.history.push('/login')
+    }
+  }
   
   componentDidMount() {
+    this.checkUserLogged();
     this.init();
   }
   
