@@ -23,8 +23,8 @@ export default function App() {
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={GameModes} />
         <Route path="/login" component={Login} />
+        <Route exact path="/" component={GameModes} />
         <Route path="/signup" component={Signup} />
         <Route path="/home" component={Home} />
         <Route path="/aves" component={Aves} />
