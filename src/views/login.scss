@@ -24,14 +24,18 @@ body {
   display: flex;
   flex-direction: column;
   padding: 30px 0;
+  font-size: 15px;
   label {
     text-align: initial;
     padding: 10px 0;
     margin: 0;
   }
-  // ::placeholder{
-  //   font-size: 12px;
-  // }
+  input {
+    min-width: 295px;
+  }
+  ::placeholder{
+    font-size: 14px;
+  }
 }
 
 .button-signin {
@@ -49,7 +53,7 @@ body {
 
 .error-message {
   color: red;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .link-signup {

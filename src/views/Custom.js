@@ -20,7 +20,7 @@ export default class Custom extends React.Component {
 
   checkUserLogged() {
     if (sessionStorage.getItem('userToken') === null){
-      this.props.history.push('/login')
+      return this.props.history.push('/login')
     }
   }
 
