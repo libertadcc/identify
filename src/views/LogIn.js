@@ -32,12 +32,12 @@ class LogIn extends React.Component {
       const response = await this.props.firebase.loginWithEmail(
         email,
         password
-      )
-      console.log('r', response)
+      );
+      console.log('r', response);
       if (response.user) {
         this.setState({error: ''})
         console.log("Usuario logado!!", response.user.uid);
-        sessionStorage.setItem('userToken', response.user.uid)
+        sessionStorage.setItem('userToken', response.user.uid);
         // Dónde está el token para guardarlo en el session storage, todo esto es MUY SECUNDARIO  
         return this.props.history.push('/')
       }

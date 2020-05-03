@@ -16,6 +16,7 @@ import GameModes from './views/GameModes';
 import Custom from './views/Custom';
 import Login from './views/LogIn';
 import Signup from './views/SignUp';
+import Reports from './views/Reports';
 
 import { Route, Switch } from 'react-router-dom';
 
@@ -40,6 +41,7 @@ export default function App() {
         <Route path="/exam" component={Exam} />
         <Route path="/game-mode" component={GameModes} />
         <Route path="/custom" component={Custom} />
+        <Route path="/reports" component={Reports} />
       </Switch>
     </div>
   );

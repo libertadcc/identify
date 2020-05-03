@@ -82,22 +82,20 @@ class SignUp extends React.Component {
         <div className="container-login">
           <h1 className="login-title">Nuevo usuario</h1>
           <div className="login-form">
-
             <label name="name">Nombre</label>
             <input type="text" placeholder="Nombre completo" onChange={this.changeName}/>
 
             <label name="email">Email</label>
             <input type="email" placeholder="Introduzca el email" onChange={this.changeEmail}/>
             
-          
             <label name="password">Contraseña</label>
             <input type="password" placeholder="Introduzca una contraseña" onChange={this.changePassword}/>
           </div>
           <button className="button-signin" onClick={this.signUp}>Registrarse</button>
         </div>
         {this.state.errorPassword === true? <p className="error-message">La constraseña debe tener, al menos, 6 caracteres.</p> : null }
-          {this.state.errorEmailUsed ? <p className="error-message">Ese email no está disponible.</p> : null }
-            {this.state.errorEmailFormat ? <p className="error-message">El email es incorrecto.</p> : null }
+        {this.state.errorEmailUsed ? <p className="error-message">Ese email no está disponible.</p> : null }
+        {this.state.errorEmailFormat ? <p className="error-message">El email es incorrecto.</p> : null }
       </React.Fragment>
     )
   }
