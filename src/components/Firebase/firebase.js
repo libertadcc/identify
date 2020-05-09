@@ -9,16 +9,19 @@ firebase.initializeApp(firebaseConfig);
 const Firebase = {
   // auth
   loginWithEmail: (email, password) => {
-    return firebase.auth().signInWithEmailAndPassword(email, password)
+    return firebase.auth().signInWithEmailAndPassword(email, password);
   },
+
   signupWithEmail: (email, password) => {
-    return firebase.auth().createUserWithEmailAndPassword(email, password)
+    return firebase.auth().createUserWithEmailAndPassword(email, password);
   },
+
   signOut: () => {
-    return firebase.auth().signOut()
+    return firebase.auth().signOut();
   },
+
   checkUserAuth: user => {
-    return firebase.auth().onAuthStateChanged(user)
+    return firebase.auth().onAuthStateChanged(user);
   },
   
   // firestore
@@ -41,22 +44,13 @@ const Firebase = {
     });
   },
 
-  sendData: dataToSend => {
-    var userId = sessionStorage.getItem('userToken');
-    console.log('userId', userId)
-    /*db.collection('exercises').add({
-        studentId: currentUid,
-        date: getCurrentDate(),
-        results: dataToSend
-    }).then(() => {
-        // close the create modal & reset form
-        //const modal = document.querySelector('#modal-create');
-        //M.Modal.getInstance(modal).close();
-        //createForm.reset();
-    }).catch(err => {
-        console.log(err.message);
-    });*/
-  }
+  sendData: results => {
+    return firebase
+      .firestore()
+      .collection('exercises')
+      .doc(`${results.id}`)
+      .set(results)
+  },
 }
 
 export default Firebase;

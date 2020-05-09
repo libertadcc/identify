@@ -51,12 +51,11 @@ class SignUp extends React.Component {
       )
 
       if (response.user.uid) {
-        const { uid } = response.user
-        const userData = { email, name, uid }
-        await this.props.firebase.createNewUser(userData)
-        console.log("new user!!")
-        this.props.history.push('/login')
-
+        const { uid } = response.user;
+        const userData = { email, name, uid };
+        await this.props.firebase.createNewUser(userData);
+        console.log("new user!!");
+        this.props.history.push('/login');
       }
     } catch (error) {
       console.log(error)

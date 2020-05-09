@@ -18,6 +18,9 @@ import { plants } from '../data/plants';
 import { reptiles } from '../data/reptiles';
 import { rocks } from '../data/rocks';
 
+import moment from 'moment';
+import { withFirebaseHOC } from '../components/Firebase'
+
 let gData = [];
 let gStackQuestions;
 let gCurrentIndex = 0;
@@ -27,7 +30,9 @@ let selectedQuestion = '';
 let listCandidates = [];
 let correctAnswer;
 
-export default class Exam extends React.Component {
+
+
+class Exam extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -39,6 +44,7 @@ export default class Exam extends React.Component {
       incorrectAnswers: [],
       finishedTest: false,
       percentage: 0,
+      results: [],
     }
     this.checkUserLogged = this.checkUserLogged.bind(this);
     this.init = this.init.bind(this);
@@ -52,6 +58,7 @@ export default class Exam extends React.Component {
     this._handleKeyDown = this._handleKeyDown.bind(this);
     this.showResultExam = this.showResultExam.bind(this);
     this.getPercentage = this.getPercentage.bind(this);
+    this.makeid = this.makeid.bind(this);
   }
 
   getSelectedTopics () {
@@ -221,12 +228,39 @@ export default class Exam extends React.Component {
     }
   }
 
-  showResultExam (){
+  // Generate an id to save in databaase
+  makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+ }
+ 
+  async showResultExam (){
     this.setState({finishedTest: true});
     setTimeout(() => {
       var elmnt = document.getElementById("results");
       elmnt.scrollIntoView();
     }, 20);
+
+    // const id = this.makeid(20)
+    // console.log('id', id);
+    let dateTime = new Date();
+    dateTime = moment(dateTime).format("DD/MM/YYYY HH:mm:ss");
+
+    console.log('dateTime', dateTime)
+    let results = {
+      id: this.makeid(20),
+      studentId: sessionStorage.getItem('userToken'),
+      corrects: this.state.correctAnswers,
+      incorrects: this.state.incorrectAnswers,
+      date: dateTime,
+    };
+
+    await this.props.firebase.sendData(results);
   }
 
   getPercentage() {
@@ -283,7 +317,7 @@ export default class Exam extends React.Component {
         </Col>
         <Col sm="2"></Col>
       </Row>
-      {this.state.finishedTest ? 
+      {this.state.finishedTest &&
         <React.Fragment>
           <Row>
           <Col sm="2"></Col>
@@ -308,9 +342,10 @@ export default class Exam extends React.Component {
             <Button>Volver a inicio</Button>
           </Link>
         </React.Fragment>
-        : ''
       }
     </React.Fragment>
   );
 }
 }
+
+export default withFirebaseHOC(Exam)

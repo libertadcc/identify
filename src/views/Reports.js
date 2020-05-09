@@ -12,6 +12,7 @@ class Reports extends React.Component {
     };
     this.click = this.click.bind(this);
   }
+
   async click () {
     let hola = []; 
     console.log('click');
@@ -26,7 +27,7 @@ class Reports extends React.Component {
         }
       });
     }
-    console.log('hola', hola)
+    console.log(hola)
     this.setState({listResults: hola})
   }
 
@@ -40,8 +41,8 @@ class Reports extends React.Component {
       <Header />
       <main className="main">
         <h3>Informes</h3>
-        <ul>{this.state.listResults.map((exercise, key) => {
-          return (<li index={key}>{exercise.date}</li>);
+        <ul>{this.state.listResults.map((exercise, index) => {
+          return (<li key={index}>{exercise.date}</li>);
         })}
         </ul>
       </main>
