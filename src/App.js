@@ -19,6 +19,7 @@ import Signup from './views/SignUp';
 import Reports from './views/Reports';
 
 import { Route, Switch } from 'react-router-dom';
+import Footer from './components/Footer';
 
 export default function App() {
   return (

@@ -1,6 +1,32 @@
 .container-footer {
-  background: grey;
+  position: relative;
+  bottom: 0;
+  right: 0;
   height: 80px;
-  margin-top: 20px;
+  margin: 20px 0;
   width: 100vw;
+}
+
+.content-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fa-twitter, .fa-github, .fa-linkedin {
+  transform: scale(1.5);
+  margin: 0 10px;
+  color: gray;
+}
+
+.fa-twitter:hover {
+  color: #00acee;
+}
+
+.fa-github:hover {
+  color: black;
+}
+
+.fa-linkedin:hover {
+  color: #0e76a8;
 }
