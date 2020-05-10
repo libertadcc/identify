@@ -11,49 +11,80 @@ body {
 }
 
 .container-login {
-  padding: 40px;
+  // padding: 40px;
+  // display: flex;
+  // flex-direction: column;
   display: flex;
+  margin-top: 64px;
+  align-items: center;
   flex-direction: column;
+  width: 300px;
 }
 
-.login-title {
-  // color: #17a2b8;
-}
+// .login-title {
+//   // color: #17a2b8;
+// }
 
 .login-form {
+  width: 100%;
+  margin-top: 8px;
   display: flex;
   flex-direction: column;
-  padding: 30px 0;
-  font-size: 15px;
-  label {
-    text-align: initial;
-    padding: 10px 0;
-    margin: 0;
-  }
-  input {
-    min-width: 295px;
-  }
-  ::placeholder{
-    font-size: 14px;
+}
+
+.input-login {
+  margin: 15px 0 !important;
+  border: red !important;
+}
+
+.password-login {
+  margin-bottom: 10px;
+}
+
+// .login-form {
+//   display: flex;
+//   flex-direction: column;
+//   padding: 30px 0;
+//   font-size: 15px;
+//   label {
+//     text-align: initial;
+//     padding: 10px 0;
+//     margin: 0;
+//   }
+//   input {
+//     min-width: 295px;
+//   }
+//   ::placeholder{
+//     font-size: 14px;
+//   }
+// }
+
+.button-signin {
+  color: white !important;
+  background-color: #17a2b8 !important;
+  padding: 10px 15px !important;
+  font-size: 18px;
+  border: none !important;
+  border-radius: 8px !important;
+  width: 200px !important;
+  margin-bottom: 25px !important;
+  &:hover {
+    background-color: #45b4c6 !important;
   }
 }
 
-.button-signin {
-  color: white;
-  background-color: #17a2b8;
-  padding: 10px;
-  font-size: 18px;
-  border: none;
-  border-radius: 8px;
-  margin-bottom: 25px;
-  &:hover {
-    background-color: #679BA8;
-  }
+.btn-signup {
+  margin-top: 20px;
+}
+
+.btn-remember {
+  color: #45b4c6 !important;
 }
 
 .error-message {
   color: red;
   font-size: 16px;
+  margin-top: 16px !important;
 }
 
 .link-signup {
@@ -61,5 +92,26 @@ body {
   cursor: pointer;
   &:hover {
     text-decoration: underline !important;
+    color: #45b4c6 !important;
   }
+}
+
+// --------------***********----------
+
+.form-prueba {
+  width: 100%
+}
+
+.btn-prueba {
+  background-color: #17a2b8 !important;
+}
+
+.paper {
+  display: 'flex';
+  flex-direction: 'column';
+  align-items: 'center';
+}
+
+.avatar {
+  background-color: #f06292 !important;
 }
