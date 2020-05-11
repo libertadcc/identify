@@ -18,7 +18,6 @@ body {
   margin-top: 64px;
   align-items: center;
   flex-direction: column;
-  width: 300px;
 }
 
 // .login-title {
@@ -40,24 +39,6 @@ body {
 .password-login {
   margin-bottom: 10px;
 }
-
-// .login-form {
-//   display: flex;
-//   flex-direction: column;
-//   padding: 30px 0;
-//   font-size: 15px;
-//   label {
-//     text-align: initial;
-//     padding: 10px 0;
-//     margin: 0;
-//   }
-//   input {
-//     min-width: 295px;
-//   }
-//   ::placeholder{
-//     font-size: 14px;
-//   }
-// }
 
 .button-signin {
   color: white !important;

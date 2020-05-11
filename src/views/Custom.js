@@ -3,6 +3,10 @@ import Header from '../components/Header';
 import { Link, Route } from 'react-router-dom';
 import './custom.scss';
 
+// MATERIAL UI
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+
 import Exam from './Exam';
 
 import './exam.scss';
@@ -48,56 +52,95 @@ export default class Custom extends React.Component {
       <Header />
       <div className="container-custom">
       <h3>Elige los temas: </h3>
-        <Form>
-          <Form.Check className="option" label="Aves" type="checkbox" 
-            name="birds"
-            onClick={this.onChangeOption} 
-            defaultChecked={false}/>
-          <Form.Check className="option" label="Mamíferos" type="checkbox" 
-            name="mammals"  
-            onClick={this.onChangeOption} 
-            defaultChecked={false}/>
-          <Form.Check className="option" label="Plantas" type="checkbox" 
-            name="plants" 
-            onClick={this.onChangeOption} 
-            defaultChecked={false}/>
-          <Form.Check className="option" label="Rocas" type="checkbox" 
-            name="rocks" 
-            onClick={this.onChangeOption} 
-            defaultChecked={false}/>
-          <Form.Check className="option" label="Reptiles" type="checkbox" 
-            name="reptils" 
-            onClick={this.onChangeOption} 
-            defaultChecked={false}/>
-          <Form.Check className="option" label="Peces" type="checkbox" 
-            name="fishes" 
-            onClick={this.onChangeOption} 
-            defaultChecked={false}/>
-          <Form.Check className="option" label="Anfibios" type="checkbox" 
-            name="amphibians" 
-            onClick={this.onChangeOption} 
-            defaultChecked={false}/>
-          <Form.Check className="option" label="Artrópodos" type="checkbox" 
-            name="arthropods" 
-            onClick={this.onChangeOption} 
-            defaultChecked={false}/>
-          <Form.Check className="option" label="Inv. no artrópodos" type="checkbox" 
-            name="invert" 
-            onClick={this.onChangeOption} 
-            defaultChecked={false}/>
-          <Form.Check className="option" label="Fósiles" type="checkbox" 
-            name="fossils" 
-            onClick={this.onChangeOption} 
-            defaultChecked={false}/>
-          <Link to={{
-              pathname: "/exam",
-              state: { selected: this.state.selected }
-            }}>
-            <Button className="button-custom" variant="info" disabled={this.state.selected.length === 0}>
-              Empezar examen</Button>
-          </Link>
-          <Route path="/exam" render={() => <Exam />}/>
-      </Form>
+      <div className="container-topics">
+        <FormControlLabel
+          label="Aves"
+          control={
+            <Checkbox 
+              value="birds"
+              className="btn-remember" 
+              name="birds"
+              onClick={this.onChangeOption}/>}/>
+        <FormControlLabel
+          label="Mamíferos"
+          control={
+            <Checkbox 
+              value="mammals"
+              className="btn-remember" 
+              onClick={this.onChangeOption} 
+              name="mammals"/>}/>
+        <FormControlLabel
+          label="Plantas"
+          control={
+            <Checkbox 
+              value="plants"
+              className="btn-remember" 
+              onClick={this.onChangeOption} 
+              name="plants"/>}/>
+        <FormControlLabel
+          label="Rocas"
+          control={
+            <Checkbox 
+              value="rocks"
+              className="btn-remember" 
+              onClick={this.onChangeOption} 
+              name="rocks"/>}/>
+        <FormControlLabel
+          label="Reptiles"
+          control={
+            <Checkbox 
+              value="reptils"
+              className="btn-remember" 
+              onClick={this.onChangeOption} 
+              name="reptils"/>}/>
+        <FormControlLabel
+          label="Peces"
+          control={
+            <Checkbox 
+              value="fishes"
+              className="btn-remember" 
+              onClick={this.onChangeOption} 
+              name="fishes"/>}/>
+        <FormControlLabel
+          label="Anfibios"
+          control={
+            <Checkbox 
+              value="amphibians"
+              className="btn-remember" 
+              onClick={this.onChangeOption} 
+              name="amphibians"/>}/>
+        <FormControlLabel
+          label="Artrópodos"
+          control={
+            <Checkbox 
+              value="arthropods"
+              className="btn-remember" 
+              onClick={this.onChangeOption} 
+              name="arthropods"/>}/>
+        <FormControlLabel
+          label="Inv. no artrópodos"
+          control={
+            <Checkbox 
+              value="invert"
+              className="btn-remember" 
+              onClick={this.onChangeOption} 
+              name="invert"/>}/>
+        <FormControlLabel
+          label="Fósiles"
+          control={
+            <Checkbox 
+              value="fossils"
+              className="btn-remember" 
+              onClick={this.onChangeOption} 
+              name="fossils"/>}/>
+      </div>
+      <Link to={{
+        pathname: "/exam",
+        state: { selected: this.state.selected }
+      }}>
+        <Button className="button-custom" variant="info" disabled={this.state.selected.length === 0}>Empezar examen</Button>
+      </Link>
+      <Route path="/exam" render={() => <Exam />}/>
       </div>
     </React.Fragment>
   );

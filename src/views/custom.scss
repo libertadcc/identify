@@ -1,12 +1,11 @@
-.option {
-  text-align: initial;
-  padding-left: 89px;
-  .form-check-label {
-    font-size: 20px;
-  }
-  .form-check-input {
-    margin-top: 7px;
-  }
+.container-topics {
+  display: flex;
+  flex-direction: column;
+}
+
+.MuiFormControlLabel-root {
+  margin: 0 !important;
+  width: 200px;
 }
 
 .button-custom {

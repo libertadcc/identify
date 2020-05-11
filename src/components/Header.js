@@ -4,21 +4,13 @@ import './header.scss';
 import { Navbar } from 'react-bootstrap';
 import { withFirebaseHOC } from './Firebase'
 import firebase from 'firebase';
+
+
 export default class Header extends React.Component {
   constructor(){
     super();
-    // this.handleLogOut = this.handleLogOut.bind(this);
     this.signOutUser = this.signOutUser.bind(this);
   }
-
-  // async handleLogOut() {
-  //   const response = this.props.firebase.signOut();
-  //   if (response) {
-  //     console.log("Out");
-  //     console.log(this.props)
-  //     return this.props.history.push('/login')
-  //   }
-  // }
 
   signOutUser = async () => {
     try {
@@ -28,9 +20,7 @@ export default class Header extends React.Component {
     } catch (e) {
       console.log(e);
     }
-
   }
-
 
   render() {
     return (
