@@ -1,0 +1,65 @@
+/////////////////////////
+//// PÁGINA INFORMES ////
+/////////////////////////
+.principal-list {
+  padding: 0px;
+}
+
+.wrapper-report {
+  margin: 20px 0;
+  @media (min-width: 590px) {
+    width: 590px;
+  }
+}
+
+.container-report {
+  background-color: #fbf7f9;
+  // border: 1px solid black;
+  padding: 10px;
+  text-align: initial;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 310px;
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+  p {
+    margin-bottom: 6px;
+  }
+  @media (min-width: 590px) {
+    width: 590px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.header-report {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  background-color: #b3a7a752;
+  padding: 0 15px;
+  cursor: pointer;
+  p {
+    margin: 0px;
+  }
+  .fa-chevron-down {
+    cursor: pointer;
+  }
+}
+
+.report-title {
+  font-weight: 700;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}

@@ -240,14 +240,13 @@ class Exam extends React.Component {
  }
  
   async showResultExam (){
+    console.log('topics', this.props.location.state.selected)
     this.setState({finishedTest: true});
     setTimeout(() => {
       var elmnt = document.getElementById("results");
       elmnt.scrollIntoView();
     }, 20);
 
-    // const id = this.makeid(20)
-    // console.log('id', id);
     let dateTime = new Date();
     dateTime = moment(dateTime).format("DD/MM/YYYY HH:mm:ss");
 
@@ -258,6 +257,7 @@ class Exam extends React.Component {
       corrects: this.state.correctAnswers,
       incorrects: this.state.incorrectAnswers,
       date: dateTime,
+      topics: this.props.location.state.selected
     };
 
     await this.props.firebase.sendData(results);

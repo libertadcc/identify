@@ -38,16 +38,19 @@
 }
 
 .mode-content {
-  font-family: 'Raleway', sans-serif;
+  // font-family: 'Raleway', sans-serif;
+  font-family: 'Spartan', sans-serif;
   font-size: 18px;
   display: flex;
   justify-content: center;  
 }
+
 .mode-title {
   margin: 15px 0;
   color: white;
   font-weight: bolder;
 }
+
 .mode-buttons:hover .mode-title {
   font-size: 39px;
 }
