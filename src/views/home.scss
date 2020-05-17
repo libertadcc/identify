@@ -67,6 +67,7 @@
   display: none;
   color: white;
   -webkit-text-stroke-width: 1px;
+  font-size: 27px;
 }
 
 .birds {
@@ -80,7 +81,7 @@
 }
 
 .birds:hover .title-section {
-  display: block
+  display: block;
 }
 
 .mammals {

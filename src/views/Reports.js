@@ -35,18 +35,15 @@ class Reports extends React.Component {
         }
       });
     }
-    this.setState({listResults: reportsList})
+    this.setState({listResults: reportsList});
   }
 
   getPercentageSuccess(correctas, incorrectas) {
     console.log(this.state.listResults);
     let total = correctas.length + incorrectas.length;
     let correctasN = correctas.length;
-    let incorrectasN = incorrectas.length;
-    console.log('total', total);
-    percentage = total;
+
     percentage = Math.round(( correctasN * 100 ) / total);
-    // return total;
     return percentage;
   }
 
