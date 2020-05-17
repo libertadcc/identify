@@ -12,18 +12,19 @@ body {
 }
 
 .container-login {
-  // padding: 40px;
-  // display: flex;
-  // flex-direction: column;
+  height: 70vh !important;
   display: flex;
   margin-top: 64px;
   align-items: center;
   flex-direction: column;
+  justify-content: space-around;
 }
 
-// .login-title {
-//   // color: #17a2b8;
-// }
+.link-to-ppal {
+  &:hover {
+    text-decoration: none;
+  }
+}
 
 .login-form {
   width: 100%;
@@ -49,7 +50,7 @@ body {
   border: none !important;
   border-radius: 8px !important;
   width: 200px !important;
-  margin-bottom: 25px !important;
+  margin: 25px 0 !important;
   &:hover {
     background-color: #45b4c6 !important;
   }

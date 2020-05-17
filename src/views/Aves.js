@@ -27,6 +27,7 @@ export default class Aves extends React.Component {
       correctAnswerArray: [],
       incorrectAnswerArray: [],
       percentage: 0,
+      isCorrectIcon: 0,
     }
     this.init = this.init.bind(this);
     this.clickOnAnswer1 = this.clickOnAnswer1.bind(this);
@@ -72,6 +73,7 @@ export default class Aves extends React.Component {
   getNextCandidate(listCandidates, correctAnswer) {
     let found = false;
     let nextCandidate = "";
+    this.setState({isCorrectIcon: 0})
     while (!found) {
       let randomIndex = Math.floor(Math.random() * gData.length);
       nextCandidate = gData[randomIndex].a;
@@ -110,11 +112,13 @@ export default class Aves extends React.Component {
     if(isCorrect === true) {
       this.setState(
         this.state.correctAnswerArray = this.state.correctAnswerArray.concat(text)
-      )
+      );
+      this.setState({isCorrectIcon: 1});
     } else {
       this.setState (
         this.state.incorrectAnswerArray = this.state.incorrectAnswerArray.concat(text)
-      )
+      );
+      this.setState({isCorrectIcon: 2});
     }   
   }
 
@@ -181,6 +185,14 @@ export default class Aves extends React.Component {
         <main className="main">
           <Image />
           <div className="container-options">
+            {this.state.isCorrectIcon === 2 &&
+              <div className="icon-results">
+                <i className="fas fa-times incorrects"></i>
+              </div>}
+            {this.state.isCorrectIcon === 1  &&  
+              <div className="icon-results">
+                <i className="fas fa-check corrects"></i>
+              </div>}
             <div id="idAnswers" className="divGeneral divAnswers">
               <Button 
                 variant="outline-info" 

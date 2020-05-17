@@ -96,7 +96,8 @@ class LogIn extends React.Component {
     return (
       <React.Fragment>
       <div className="container-login">
-        <h1>Iniciar sesión</h1>
+        <h1 className="title">Visu Quiz</h1>
+        <h3>Iniciar sesión</h3>
         <form noValidate autoComplete="off" className="login-form">
         <FormControl variant="outlined">
           <TextField

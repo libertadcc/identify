@@ -7,6 +7,10 @@
 
 .wrapper-report {
   margin: 20px 0;
+  font-size: 13px;
+  @media (min-width: 400px) {
+    font-size: 15px;
+  }
   @media (min-width: 590px) {
     width: 590px;
   }
@@ -14,13 +18,11 @@
 
 .container-report {
   background-color: #fbf7f9;
-  // border: 1px solid black;
   padding: 10px;
   text-align: initial;
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 310px;
   ul {
     padding: 0;
     list-style: none;

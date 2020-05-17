@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import './login.scss';
 
 import TextField from '@material-ui/core/TextField';
@@ -56,14 +58,11 @@ class SignUp extends React.Component {
     const email = this.state.user;
     const password = this.state.password;
 
-    console.log(this.props.firebase);
-
     try {
       const response = await this.props.firebase.signupWithEmail(
         email,
         password
-      )
-
+      );
       if (response.user.uid) {
         const { uid } = response.user;
         const userData = { email, name, uid };
@@ -86,18 +85,17 @@ class SignUp extends React.Component {
     } finally {
       //console.log("try done")
     }
-
   }
 
   render() {
     return (
       <React.Fragment>
         <div className="container-login">
-          <h1 className="login-title">Nuevo usuario</h1>
+          <Link to="/login" className="link-to-ppal">
+            <h1 className="title">Visu Quiz</h1>
+          </Link>
+          <h3 className="login-title">Nuevo usuario</h3>
           <div className="login-form">
-            {/* <label name="name">Nombre</label>
-            <input type="text" placeholder="Nombre completo" onChange={this.changeName}/> */}
-
             <TextField
               variant="outlined"
               required
@@ -151,15 +149,8 @@ class SignUp extends React.Component {
                       >
                       {this.state.showPassword ? <Visibility /> : <VisibilityOff />}
                     </IconButton>
-                  </InputAdornment>
-                }
-              />
-          </FormControl>
-            {/* <label name="email">Email</label>
-            <input type="email" placeholder="Introduzca el email" onChange={this.changeEmail}/> */}
-            
-            {/* <label name="password">Contraseña</label>
-            <input type="password" placeholder="Introduzca una contraseña" onChange={this.changePassword}/> */}
+                  </InputAdornment>}/>
+            </FormControl>
           </div>
           <button className="button-signin btn-signup" onClick={this.signUp}>Registrarse</button>
         </div>
