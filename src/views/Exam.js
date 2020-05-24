@@ -273,6 +273,7 @@ class Exam extends React.Component {
   return (
     <React.Fragment>
       <Header />
+        <h6 className="title-number">Pregunta número {this.state.count}</h6>
       <img 
       alt="Foto de especie"
       id="imgQuestion"
@@ -313,7 +314,7 @@ class Exam extends React.Component {
         <Col sm="8">
           <Button 
           onClick={this.showResultExam}>
-            Finalizar test</Button>
+            Finalizar examen</Button>
         </Col>
         <Col sm="2"></Col>
       </Row>

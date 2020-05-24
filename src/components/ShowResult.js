@@ -9,7 +9,7 @@ export function ShowResult ({correctAnswer, incorrectAnswer}) {
       return (
         <ul className="list-result" >{correctAnswer.map((item, id) => {
           return (
-            <li className="list-item" key={id}>{item}</li>
+            <li className="list-item" key={id}>- {item}</li>
           );
         })}</ul>
       );
@@ -21,7 +21,7 @@ export function ShowResult ({correctAnswer, incorrectAnswer}) {
       return (
         <ul className="list-result">{incorrectAnswer.map((item, id) => {
           return (
-            <li className="list-item" key={id}>{item}</li>
+            <li className="list-item" key={id}>- {item}</li>
           );
         })}</ul>
       );

@@ -28,6 +28,12 @@ html {
   color: green;
 }
 
+.title-number {
+  text-align: right;
+  margin-bottom: 16px;
+  margin-right: 40px;
+}
+
 .row-btns {
   margin-top: 35px;
 }
@@ -37,7 +43,7 @@ html {
   margin: 5px 0;
   width: 170px;
   @media all and (min-width: 500px) {
-    font-size: 18px;
+    font-size: 15px;
     width: 190px;
   }
 }
