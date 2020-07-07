@@ -8,19 +8,30 @@ import { withFirebaseHOC } from '../components/Firebase';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
+// MATERIAL UI
+import Pagination from '@material-ui/lab/Pagination';
+
+
 let reportsList = []; 
 let percentage = 0;
+const REPORT_PER_PAGE = 5;
 
 class Reports extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       listResults: [],
-      percentage: 0
+      reportsToShow: [],
+      percentage: 0,
+      page: 1,
+      totalPages: 1,
     };
     this.click = this.click.bind(this);
     this.getPercentageSuccess = this.getPercentageSuccess.bind(this);
     this.displayMoreInfo = this.displayMoreInfo.bind(this);
+    this.getTotalNumberOfPages = this.getTotalNumberOfPages.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.showReports = this.showReports.bind(this);
   }
 
   async click () {
@@ -29,17 +40,17 @@ class Reports extends React.Component {
     if (response) {
       console.log("Ya hemos recibido la información en response.docs. Hay estos elementos: " + response.docs.length);
       response.docs.forEach(function (doc) {
-        console.log(doc.id, ' => ', doc.data());
+        // console.log(doc.id, ' => ', doc.data());
         if(doc.data() !== undefined) {
           reportsList.push(doc.data());
         }
       });
     }
-    this.setState({listResults: reportsList});
+    this.setState({listResults: reportsList, reportsToShow: reportsList});
+    this.getTotalNumberOfPages();
   }
 
   getPercentageSuccess(correctas, incorrectas) {
-    console.log(this.state.listResults);
     let total = correctas.length + incorrectas.length;
     let correctasN = correctas.length;
 
@@ -63,6 +74,38 @@ class Reports extends React.Component {
     }
   }
 
+  getTotalNumberOfPages() {
+    const numberOfReports = this.state.listResults.length;
+    this.setState({ totalPages : numberOfReports / REPORT_PER_PAGE });
+  }
+
+  handleChange(event, value) {
+    this.setState({ page: value});
+    // Si es la primera pagina, carga los 5 primeros resultados, si es la segunda, de la 5 a la diez etc
+    // if (page === 1) {
+    //   this.setState.listResults
+    // }
+    console.log('page', this.state.page)
+    this.showReports();
+  };
+
+  showReports() {
+    // this.state.listResults = 
+    const { page, listResults } = this.state;
+    
+    let currentReports; 
+    if (page === 1) {
+      currentReports = listResults.slice(0, REPORT_PER_PAGE);
+      console.log('currentReports', currentReports)
+      this.setState({ listResults: currentReports});
+    } else {
+      currentReports = listResults.slice(page*REPORT_PER_PAGE, page+1 * REPORT_PER_PAGE);
+      this.setState({ listResults: currentReports});
+      console.log('currentReports else', currentReports)
+
+    }
+  }
+
   componentDidMount() {
     this.click();
   }
@@ -73,6 +116,7 @@ class Reports extends React.Component {
       <Header />
       <main className="main">
         <h3>Informes</h3>
+        {/* Listado de informes (rectángulos grises) */}
         <ul className="principal-list">{this.state.listResults.map((exercise, index) => {
           return (
             <div key={index} className="wrapper-report" onClick={this.displayMoreInfo}>
@@ -135,6 +179,7 @@ class Reports extends React.Component {
           );
         })}
         </ul>
+        <Pagination count={this.state.totalPages} page={this.state.page} onChange={ this.handleChange } variant="outlined" color="primary"/>
       </main>
     </React.Fragment>);
   }
