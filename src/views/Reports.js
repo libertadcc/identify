@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
 import './reports.scss';
-
 import { withFirebaseHOC } from '../components/Firebase';
 
 // CIRCULAR PROGRESS BAR
@@ -11,43 +10,47 @@ import 'react-circular-progressbar/dist/styles.css';
 // MATERIAL UI
 import Pagination from '@material-ui/lab/Pagination';
 
-
 let reportsList = []; 
 let percentage = 0;
 const REPORT_PER_PAGE = 5;
+let currentPage = 1;
 
 class Reports extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       listResults: [],
-      reportsToShow: [],
       percentage: 0,
-      page: 1,
       totalPages: 1,
     };
-    this.click = this.click.bind(this);
+    this.fetchReports = this.fetchReports.bind(this);
     this.getPercentageSuccess = this.getPercentageSuccess.bind(this);
     this.displayMoreInfo = this.displayMoreInfo.bind(this);
-    this.getTotalNumberOfPages = this.getTotalNumberOfPages.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.showReports = this.showReports.bind(this);
+    this.setReportsToShow = this.setReportsToShow.bind(this);
   }
 
-  async click () {
+  async fetchReports () {
     const userId = sessionStorage.getItem('userToken');
     const response = await this.props.firebase.getExercisesByUserId(userId);
     if (response) {
       console.log("Ya hemos recibido la información en response.docs. Hay estos elementos: " + response.docs.length);
       response.docs.forEach(function (doc) {
-        // console.log(doc.id, ' => ', doc.data());
-        if(doc.data() !== undefined) {
-          reportsList.push(doc.data());
-        }
+        if(doc.data() !== undefined) reportsList.push(doc.data());
       });
     }
-    this.setState({listResults: reportsList, reportsToShow: reportsList});
-    this.getTotalNumberOfPages();
+    this.setState({totalPages: Math.round(reportsList.length/REPORT_PER_PAGE)}); // Páginas totales
+    this.setReportsToShow(currentPage)
+  }
+
+  setReportsToShow(page) {
+    let responseFormatted; 
+    if(page === 1) {
+      responseFormatted = reportsList.slice(0, page * REPORT_PER_PAGE)
+    } else {
+      responseFormatted = reportsList.slice((page - 1) * REPORT_PER_PAGE, page * REPORT_PER_PAGE)
+    }
+    this.setState({listResults: responseFormatted});
   }
 
   getPercentageSuccess(correctas, incorrectas) {
@@ -74,41 +77,15 @@ class Reports extends React.Component {
     }
   }
 
-  getTotalNumberOfPages() {
-    const numberOfReports = this.state.listResults.length;
-    this.setState({ totalPages : numberOfReports / REPORT_PER_PAGE });
-  }
-
   handleChange(event, value) {
-    this.setState({ page: value});
-    // Si es la primera pagina, carga los 5 primeros resultados, si es la segunda, de la 5 a la diez etc
-    // if (page === 1) {
-    //   this.setState.listResults
-    // }
-    console.log('page', this.state.page)
-    this.showReports();
+    currentPage = value;
+    this.setReportsToShow(currentPage);
   };
 
-  showReports() {
-    // this.state.listResults = 
-    const { page, listResults } = this.state;
-    
-    let currentReports; 
-    if (page === 1) {
-      currentReports = listResults.slice(0, REPORT_PER_PAGE);
-      console.log('currentReports', currentReports)
-      this.setState({ listResults: currentReports});
-    } else {
-      currentReports = listResults.slice(page*REPORT_PER_PAGE, page+1 * REPORT_PER_PAGE);
-      this.setState({ listResults: currentReports});
-      console.log('currentReports else', currentReports)
-
-    }
-  }
-
   componentDidMount() {
-    this.click();
+    this.fetchReports();
   }
+  
 
   render () {  
     return (
@@ -116,7 +93,6 @@ class Reports extends React.Component {
       <Header />
       <main className="main">
         <h3>Informes</h3>
-        {/* Listado de informes (rectángulos grises) */}
         <ul className="principal-list">{this.state.listResults.map((exercise, index) => {
           return (
             <div key={index} className="wrapper-report" onClick={this.displayMoreInfo}>
@@ -172,14 +148,12 @@ class Reports extends React.Component {
                     return <li key={index}>{answer}</li>
                   })}</ul>
                 </div>
-
-                
               </div>
             </div>
           );
         })}
         </ul>
-        <Pagination count={this.state.totalPages} page={this.state.page} onChange={ this.handleChange } variant="outlined" color="primary"/>
+        <Pagination className="pagination-container" count={this.state.totalPages} page={currentPage} onChange={ this.handleChange } variant="outlined" color="primary"/>
       </main>
     </React.Fragment>);
   }
