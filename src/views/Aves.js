@@ -71,6 +71,7 @@ export default class Aves extends React.Component {
   }
 
   getNextCandidate(listCandidates, correctAnswer) {
+    console.log(correctAnswer);
     let found = false;
     let nextCandidate = "";
     this.setState({isCorrectIcon: 0})

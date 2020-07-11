@@ -69,6 +69,7 @@ export default class Invertebrados extends React.Component {
   }
 
   getNextCandidate(listCandidates, correctAnswer) {
+    console.log(correctAnswer);
     let found = false;
     let nextCandidate = "";
     while (!found) {
