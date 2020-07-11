@@ -21,6 +21,9 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 25px;
   }
+  button {
+    border: none;
+  }
 }
 
 .menu-buttons {
@@ -76,7 +79,7 @@
   background-color: transparent;
   &:hover{
     opacity: 0.5;
-    background: #646d6e;
+    // background: #646d6e;
   }
 }
 
@@ -89,7 +92,7 @@
   background-size: cover;
   &:hover{
     opacity: 0.5;
-    background: #7b5b41;
+    // background: #7b5b41;
   }
 }
 
@@ -102,7 +105,7 @@
   background-size: cover;
   &:hover{
     opacity: 0.5;
-    background: #4b9238;
+    // background: #4b9238;
   }
 }
 
@@ -225,4 +228,8 @@
 
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 #a3a8a3; }
+}
+
+.disabled {
+  cursor: not-allowed !important;
 }

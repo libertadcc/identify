@@ -49,7 +49,7 @@ export default class Home extends React.Component {
           </Link>
 
           <Link to="/rocks">
-            <button className="menu-buttons rocks" disabled>
+            <button className="menu-buttons rocks">
               <div className="menu-content">
                 <h2 className="title-section">ROCAS</h2>
               </div>
@@ -88,7 +88,7 @@ export default class Home extends React.Component {
             </button>
           </Link>
 
-          <button className="menu-buttons minerals" disabled>
+          <button className="menu-buttons minerals disabled">
             <div className="menu-content">
               <h2 className="title-section">MINERALES</h2>
             </div>
